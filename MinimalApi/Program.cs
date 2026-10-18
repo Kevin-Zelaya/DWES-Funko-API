@@ -1,6 +1,4 @@
 
-
-using MinimalApi.models;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,10 +27,8 @@ if (app.Environment.IsDevelopment())
     });
 }
 
-// De momento sin
-FunkoRepository repository = new FunkoRepository();
+await app.InitializationDatabaseAsync("postgre");
 
 app.MapControllers();
-
 app.Run();
 

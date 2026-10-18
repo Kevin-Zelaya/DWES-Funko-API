@@ -10,8 +10,10 @@ public static class AppConfig
                 reloadOnChange: true
             )
             .Build();
+        ConnectionString = Configuration["ConnectionStrings:DefaultConnection"]
+            ?? throw new ArgumentException("Error al obtener la propiedad ConnectionStrings:DefaultConnection");
     }
 
     public static IConfiguration Configuration {get; private set;}
-    public static string StringConnection {get; private set;}
+    public static string ConnectionString {get; private set;}
 } 

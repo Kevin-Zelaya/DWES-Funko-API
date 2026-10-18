@@ -1,22 +1,59 @@
 using System.ComponentModel.DataAnnotations;
 
-public class FunkoCreateRequestDto
-{
-    [Required(ErrorMessage = "Nombre requerido")]
-    [MinLength(2)]
-    [MaxLength(100)]
-    public string Nombre;
-    [Required(ErrorMessage = "Nombre requerido")]
-    [MinLength(1)]
-    [MaxLength(100)]
-    public string Franquicia;
-    [Required]
-    [Range(0, int.MaxValue)]
-    public int Numero;
-    [Required(ErrorMessage = "Categoria requerido")]
-    [MinLength(1)]
-    [MaxLength(100)]
-    public string categoriam;
-    public bool exclusivom;
-    public double preci;
-}
+/// <summary>
+///     Dto para crear un funko
+///     Conteine un dto para la categoría 
+///     diferente al dto original, para desacoplar
+///     las validacioens
+/// </summary>
+/// <param name="Name"></param>
+/// <param name="Franchise"></param>
+/// <param name="Number"></param>
+/// <param name="SupplierId"></param>
+/// <param name="Category"></param>
+/// <param name="Exclusive"></param>
+/// <param name="Price"></param>
+public record FunkoCreateRequestDto(
+    [param: Required(ErrorMessage = "Nombre requerido")]
+    [param: MinLength(2)]
+    [param: MaxLength(100)]
+    string Name,
+
+    [param: Required(ErrorMessage = "Franquicia requerida")]
+    [param: MinLength(1)]
+    [param: MaxLength(100)]
+    string Franchise,
+
+    [param: Range(1, int.MaxValue)]
+    int Number,
+
+    [param: Range(1, int.MaxValue)]
+    int SupplierId,
+
+    [param: Required(ErrorMessage = "Categoría requerida")]
+    CategoryUpdateRequestDto? Category,
+
+    bool Exclusive,
+
+    [param: Range(0.01, 1000000)]
+    double Price
+);
+/// <summary>
+///     Dto complementario para crear un funko,
+///     desacopla la validaciones del dto original
+/// </summary>
+/// <param name="Id"></param>
+/// <param name="Name"></param>
+/// <param name="Description"></param>
+public record CategoryUpdateRequestDto(
+
+    [param: Required(ErrorMessage = "Nombre requerido")]
+    [param: MinLength(2)]
+    [param: MaxLength(100)]
+    string Name,
+
+    [param: Required(ErrorMessage = "Descripción requerida")]
+    [param: MinLength(2)]
+    [param: MaxLength(100)]
+    string Description
+);

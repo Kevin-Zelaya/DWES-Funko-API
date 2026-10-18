@@ -1,4 +1,4 @@
-public interface IRepository
+public interface IFunkoRepository
 {
     /// <summary>
     /// Crear un funko de forma asincrona
@@ -36,14 +36,14 @@ public interface IRepository
     /// <param name="pageSize">Tamaño de página</param>
     /// <param name="ct">token de cancelación</param>
     /// <returns>Lista paginada de usuarios</returns>
-    Task<List<Funko>> GetPaginatedFunkosAsync(int pageNumber, int pageSize, CancellationToken ct);
+    Task<(List<Funko> items, int count, int totalPages, bool HasPreviousPage, bool HasNextPage)> GetPaginatedFunkosAsync(int pageNumber, int pageSize, CancellationToken ct);
     /// <summary>
     /// Restablecer funko eliminado de forma lógica
     /// </summary>
     /// <param name="id">Id del funko a restablecer</param>
     /// <param name="ct">Token de cancelación</param>
     /// <returns>True o false dependiendo de si se encontró</returns>
-    Task<bool> RestoreFunkoAsync(int id, CancellationToken ct);
+    Task<Funko?> RestoreFunkoAsync(int id, CancellationToken ct);
     /// <summary>
     /// Actualizar funko
     /// </summary>
@@ -51,5 +51,37 @@ public interface IRepository
     /// <param name="funko">Data del funko</param>
     /// <param name="ct">Token a cancelación</param>
     /// <returns>Data actualiada</returns>
-    Task<Funko> UpdateFunkoAsync(int id, Funko funko, CancellationToken ct = default);
+    Task<Funko> UpdateFunkoAsync(int id, FunkoUpdateRequestDto funko, CancellationToken ct = default);
+    /// <summary>
+    /// Auxiliar para obtener todas las categorias
+    /// </summary>
+    /// <param name="ct">Token de cancelación</param>
+    /// <returns>Lista de categorias</returns>
+    public Task<List<Category>> GetAllCategoriesAsync(CancellationToken ct);
+    /// <summary>
+    /// Actualización parcial, solo
+    /// categoria del funko
+    /// </summary>
+    /// <param name="id">Id del funko a actualizar</param>
+    /// <param name="request">Dto de categoría a actualizar</param>
+    /// <see cref="CategoryUpdateRequestDto"/>
+    /// <param name="ct">Token de cancelación</param>
+    /// <returns>Funko actualizado</returns>
+    public  Task<Funko?> UpdateCategoryFromFunkoAsync(int id, CategoryUpdateRequestDto request, CancellationToken ct = default);
+    /// <summary>
+    /// Actualizacion parcial, solo
+    /// referencia a proveedor
+    /// </summary>
+    /// <param name="id">Id del funko a actualizar</param>
+    /// <param name="SupplierId">Id del proveedor</param>
+    /// <param name="ct">Token de cancelación</param>
+    /// <returns>Funko actualizado</returns>
+    public Task<Funko?> UpdateSuplierFromFunkoAsync(int id, int SupplierId, CancellationToken ct = default);
+    /// <summary>
+    /// Comprueba si existe el proveedor
+    /// </summary>
+    /// <param name="id">Id del proveedor a consultar</param>
+    /// <param name="ct">Token de cancelación</param>
+    /// <returns>Proveedor consultado</returns>
+    public  Task<bool> ExistSupplierByIdAsync(int id, CancellationToken ct);
 }

@@ -1,15 +1,16 @@
 public class Funko
 {
     public int Id { get; set; }
-    public string Nombre { get; set; } = string.Empty;
-    public string Franquicia { get; set; } = string.Empty;
-    public int Numero { get; set; }
-    public int categoriaId {get; set;}
-    public Category Categoria { get; set; } = new();
-    public bool Exclusivo { get; set; }
-    public double Precio { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public string Franchise { get; set; } = string.Empty;
+    public int Number { get; set; }
+    public int SupplierId {get; set;}
+    public Supplier? Supplier{get; set;}
+    public Category Category { get; set; } = new();
+    public bool Exclusive { get; set; }
+    public double Price { get; set; }
     public bool IsDelete {get; set;}
     public DateTime CreatedAt { get; set; }
-    public DateTime UpdatedAt { get; set; }
-    public DateTime DeleteAT {get; set;}
+    public DateTime? UpdatedAt { get; set; }
+    public DateTime? DeleteAT {get; set;}
 }

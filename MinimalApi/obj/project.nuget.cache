@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "9kC0M7NrJLw=",
+  "dgSpecHash": "kqVAmZPhE7s=",
   "success": true,
-  "projectFilePath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
+  "projectFilePath": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\kenrr\\.nuget\\packages\\csharpfunctionalextensions\\3.7.0\\csharpfunctionalextensions.3.7.0.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.12\\microsoft.aspnetcore.openapi.10.0.12.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\microsoft.build.framework\\18.0.2\\microsoft.build.framework.18.0.2.nupkg.sha512",
@@ -30,6 +31,7 @@
     "C:\\Users\\kenrr\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\10.0.3\\npgsql.entityframeworkcore.postgresql.10.0.3.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\scalar.aspnetcore\\2.17.12\\scalar.aspnetcore.2.17.12.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\scrutor\\7.0.0\\scrutor.7.0.0.nupkg.sha512",
+    "C:\\Users\\kenrr\\.nuget\\packages\\serilog\\4.4.0\\serilog.4.4.0.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\10.2.3\\swashbuckle.aspnetcore.swaggerui.10.2.3.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\system.codedom\\6.0.0\\system.codedom.6.0.0.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\system.composition\\9.0.0\\system.composition.9.0.0.nupkg.sha512",
@@ -44,9 +46,9 @@
       "code": "NU1510",
       "level": "Warning",
       "message": "PackageReference Microsoft.Extensions.Configuration no se eliminará. Este paquete está disponible automáticamente y no es necesario hacer referencia a él explícitamente. Quite el elemento PackageReference.",
-      "projectPath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
+      "projectPath": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
       "warningLevel": 1,
-      "filePath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
+      "filePath": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
       "libraryId": "Microsoft.Extensions.Configuration",
       "targetGraphs": [
         "net10.0"
@@ -55,11 +57,11 @@
     {
       "code": "NU1510",
       "level": "Warning",
-      "message": "PackageReference Microsoft.Extensions.Configuration.Json no se eliminará. Este paquete está disponible automáticamente y no es necesario hacer referencia a él explícitamente. Quite el elemento PackageReference.",
-      "projectPath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
+      "message": "PackageReference Microsoft.Extensions.Configuration.Binder no se eliminará. Este paquete está disponible automáticamente y no es necesario hacer referencia a él explícitamente. Quite el elemento PackageReference.",
+      "projectPath": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
       "warningLevel": 1,
-      "filePath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
-      "libraryId": "Microsoft.Extensions.Configuration.Json",
+      "filePath": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
+      "libraryId": "Microsoft.Extensions.Configuration.Binder",
       "targetGraphs": [
         "net10.0"
       ]
@@ -67,11 +69,11 @@
     {
       "code": "NU1510",
       "level": "Warning",
-      "message": "PackageReference Microsoft.Extensions.Configuration.Binder no se eliminará. Este paquete está disponible automáticamente y no es necesario hacer referencia a él explícitamente. Quite el elemento PackageReference.",
-      "projectPath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
+      "message": "PackageReference Microsoft.Extensions.Configuration.Json no se eliminará. Este paquete está disponible automáticamente y no es necesario hacer referencia a él explícitamente. Quite el elemento PackageReference.",
+      "projectPath": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
       "warningLevel": 1,
-      "filePath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
-      "libraryId": "Microsoft.Extensions.Configuration.Binder",
+      "filePath": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
+      "libraryId": "Microsoft.Extensions.Configuration.Json",
       "targetGraphs": [
         "net10.0"
       ]

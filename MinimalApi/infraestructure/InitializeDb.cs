@@ -1,0 +1,20 @@
+using Serilog;
+
+public static class InitializationDb
+{
+    public static async Task InitializationDatabaseAsync(this WebApplication app, string contextType)
+    {
+        if (contextType.ToLower().Equals("postgre"))
+        {
+            
+            using var scope = app.Services.CreateScope();
+            var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+
+            ///<summary> Eliminar base de datos <summary>
+            Log.Debug("[POSGRE] Eliminando y recreando la base de datos");
+            await context.Database.EnsureDeletedAsync();
+            await context.Database.EnsureCreatedAsync();
+            Log.Information("[POSGRE] Eliminando y recreando la base de datos");
+        }
+    }
+}

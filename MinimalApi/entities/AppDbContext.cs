@@ -1,10 +1,11 @@
 using System.ComponentModel.DataAnnotations;
+using System.IO.Compression;
 using Microsoft.EntityFrameworkCore;
 
 public class AppDbContext : DbContext
 {
     public DbSet<Funko> Funkos {get; set;}
-    public DbSet<Category> Categories {get; set;}
+    public DbSet<Supplier> Suppliers {get; set;}
     public AppDbContext(DbContextOptions options) : base(options)
     {
     }
@@ -17,57 +18,64 @@ public class AppDbContext : DbContext
             entity.Property(u => u.Id).ValueGeneratedOnAdd();
 
             ///<summary> Nombre como indice </summary>
-            entity.HasIndex(p => p.Nombre)
+            entity.HasIndex(p => p.Name)
             .IsUnique();
-            entity.Property(p => p.Nombre)
+            entity.Property(p => p.Name)
             .HasMaxLength(100);
 
             ///<summary> Franquicia </summary>
-            entity.Property(p => p.Franquicia).HasMaxLength(100);
+            entity.Property(p => p.Franchise).HasMaxLength(100);
             ///<summary> número </summary>
-            entity.Property(p => p.Numero).IsRequired();
+            entity.Property(p => p.Number).IsRequired();
             ///<summary> Exclusivo valor por defecto false </summary>
-            entity.Property(p => p.Exclusivo).HasDefaultValue(false);
+            entity.Property(p => p.Exclusive).HasDefaultValue(false);
             ///<summary> Precio requerido </summary>
-            entity.Property(p => p.Precio).IsRequired(true);
+            entity.Property(p => p.Price).IsRequired(true);
             ///<summary> Eliminado, valor por defecto false </summary>
             entity.Property(p => p.IsDelete).HasDefaultValue(false);
             ///<summary> Fecha de creado </summary>
             entity.Property(p => p.CreatedAt).HasDefaultValueSql("CURRENT_TIMESTAMP");
             ///<summary> Fecha de actualizado </summary>
-            entity.Property(p => p.UpdatedAt).HasDefaultValueSql("CURRENT_TIMESTAMP");
+            entity.Property(p => p.UpdatedAt).IsRequired(false).HasDefaultValue(null);
             ///<summary> Fecha de eliminado </summary>
-            entity.Property(p => p.DeleteAT).HasDefaultValue(null);
+            entity.Property(p => p.DeleteAT).IsRequired(false).HasDefaultValue(null);
+            //<summary> Conversión de categoría a json </summary>
+            entity.ComplexProperty(f => f.Category, category => category.ToJson());
+
             //<summary> Relación con categoria </summary>
-            entity.HasOne(f => f.Categoria)
-                .WithMany(c => c.Funkos)
-                .HasForeignKey(f => f.categoriaId)
-                .OnDelete(DeleteBehavior.Restrict);
+            entity.HasOne(f => f.Supplier)
+                .WithMany(s => s.Funkos)
+                .HasForeignKey(f => f.SupplierId);
 
             entity.HasQueryFilter(f => !f.IsDelete);
         });
-        modelBuilder.Entity<Category>(entity =>
+        modelBuilder.Entity<Supplier>(entity =>
         {
             ///<summary> Key de categoria se genera automaticamente </summary>
-            entity.HasKey(c => c.Id);
-            entity.Property(c=> c.Id).ValueGeneratedOnAdd();
+            entity.HasKey(s => s.Id);
+            entity.Property(s=> s.Id).ValueGeneratedOnAdd();
             ///<summary> 
             ///     Nombre como indice 
             ///     requerido y largo máximo de 100
             /// </summary>
-            entity.Property(c=>c.Name).IsRequired().HasMaxLength(100);
-            entity.HasIndex(c => c.Name);
+            entity.Property(s => s.Name).IsRequired().HasMaxLength(100);
+            entity.HasIndex(s => s.Name);
             ///<summary> Eliminado lógico, falso por defecto </summary>
-            entity.Property(c=>c.IsDeleted).HasDefaultValue(false);
+            entity.Property(s=>s.IsDeleted).HasDefaultValue(false);
             ///<summary> Fecha de creación valor por defecto "ahora" </summary>
-            entity.Property(c=>c.CreateAt).HasDefaultValueSql("CURRENT_TIMESTAMP");
+            entity.Property(s=>s.CreateAt).HasDefaultValueSql("CURRENT_TIMESTAMP");
             ///<summary> Fecha de actualización valor por defecto "ahora" </summary>
-            entity.Property(c=>c.UpdateAt).HasDefaultValueSql("CURRENT_TIMESTAMP");
+            entity.Property(s=>s.UpdateAt).IsRequired(false).HasDefaultValue(null);
             ///<summary> Fecha de eliminado </summary>
-            entity.Property(p => p.DeleteAt).HasDefaultValue(null);
-
+            entity.Property(s => s.DeleteAt).IsRequired(false).HasDefaultValue(null);
+            ///<summary> Filtro </summary>
             entity.HasQueryFilter(f => !f.IsDeleted);
 
+            ///<summary> Semíllas </summary>
+            entity.HasData(
+                new Supplier{Id = 1, Name = "Funko Europe", IsDeleted = false},
+                new Supplier{Id = 2, Name = "Collector Store", IsDeleted = false});
         });
+
     }
 }
