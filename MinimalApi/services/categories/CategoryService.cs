@@ -51,7 +51,7 @@ public class CategoryService(
                 response.ToDto())
                 .Tap(c => _logger.LogInformation("[CATEGORY-GETPAGINATED] Retornando lista páginada de categorias."))
             : Result.Failure<CategoryDto?, DomainError>(
-                NotFoundError.FromResource("Category", 0))
+                NotFoundError.FromResource("Category", ""))
                 .Tap(c => _logger.LogError("[CATEGORY-GETBYNAME] No se ha encontrado la categoria con el nombre {name}", name));
     }
 }

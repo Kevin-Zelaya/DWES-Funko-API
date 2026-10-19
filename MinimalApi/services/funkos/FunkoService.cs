@@ -35,9 +35,9 @@ public class FunkoService(
     // READ
     // =========================================================
 
-    /// <inheritdoc cref="IFunkoService.GetFunkoByIdAsync(int, CancellationToken)"/>
+    /// <inheritdoc cref="IFunkoService.GetFunkoByIdAsync(string, CancellationToken)"/>
     public async Task<Result<FunkoDto, DomainError>> GetFunkoByIdAsync(
-        int id,
+        string id,
         CancellationToken ct)
     {
         _logger.LogDebug(
@@ -73,7 +73,7 @@ public class FunkoService(
                 response.Count));
     }
 
-    /// <inheritdoc cref="IFunkoService.GetPaginatedFunkos(int, int, CancellationToken)"/>
+    /// <inheritdoc cref="IFunkoService.GetPaginatedFunkos(string, string, CancellationToken)"/>
     public async Task<Result<PaginatedResouce<FunkoDto>, DomainError>> GetPaginatedFunkos(
         int pageNumber,
         int pageSize,
@@ -103,9 +103,9 @@ public class FunkoService(
     // UPDATE
     // =========================================================
 
-    /// <inheritdoc cref="IFunkoService.UpdateFunkoAsync(int, FunkoUpdateRequestDto, CancellationToken)"/>
+    /// <inheritdoc cref="IFunkoService.UpdateFunkoAsync(string, FunkoUpdateRequestDto, CancellationToken)"/>
     public async Task<Result<FunkoDto, DomainError>> UpdateFunkoAsync(
-        int id,
+        string id,
         FunkoUpdateRequestDto request,
         CancellationToken ct = default)
     {
@@ -126,9 +126,9 @@ public class FunkoService(
                     "[SERVICE-UPDATE] No se encontró el Funko con ID {Id}.",
                     id));
     }
-    /// <inheritdoc cref="IFunkoService.UpdateCategoryFromAsync(int, CategoryUpdateRequestDto, CancellationToken)"/>
+    /// <inheritdoc cref="IFunkoService.UpdateCategoryFromAsync(string, CategoryUpdateRequestDto, CancellationToken)"/>
     public async Task<Result<FunkoDto, DomainError>> UpdateCategoryFromAsync(
-        int id,
+        string id,
         CategoryUpdateRequestDto request,
         CancellationToken ct = default)
     {
@@ -149,10 +149,10 @@ public class FunkoService(
                     "[SERVICE-UPDATECATEGORY] No se encontró el Funko con ID {Id}.",
                     id));
     }
-    /// <inheritdoc cref="IFunkoService.UpdateSupplierFromFunko(int, int, CancellationToken)"/>
+    /// <inheritdoc cref="IFunkoService.UpdateSupplierFromFunko(string, string, CancellationToken)"/>
     public async Task<Result<FunkoDto, DomainError>> UpdateSupplierFromFunko(
-        int id,
-        int supplierId,
+        string id,
+        string supplierId,
         CancellationToken ct = default)
     {
         _logger.LogDebug(
@@ -182,9 +182,9 @@ public class FunkoService(
     // DELETE / RESTORE
     // =========================================================
 
-    /// <inheritdoc cref="IFunkoService.DeleteFunkoAsync(int, CancellationToken)"/>
+    /// <inheritdoc cref="IFunkoService.DeleteFunkoAsync(string, CancellationToken)"/>
     public async Task<Result<bool, DomainError>> DeleteFunkoAsync(
-        int id,
+        string id,
         CancellationToken ct = default)
     {
         _logger.LogDebug(
@@ -205,9 +205,9 @@ public class FunkoService(
                     id));
     }
 
-    /// <inheritdoc cref="IFunkoService.RestoreDeletedFunkoAsync(int, CancellationToken)"/>
+    /// <inheritdoc cref="IFunkoService.RestoreDeletedFunkoAsync(string, CancellationToken)"/>
     public async Task<Result<FunkoDto, DomainError>> RestoreDeletedFunkoAsync(
-        int id,
+        string id,
         CancellationToken ct = default)
     {
         _logger.LogDebug(

@@ -20,6 +20,6 @@ public interface ISupplierService
     /// Obtiene un proveedor por su identificador.
     /// </summary>
     Task<Result<SupplierDto, DomainError>> GetSupplierByIdAsync(
-        int id,
+        string id,
         CancellationToken ct = default);
 }

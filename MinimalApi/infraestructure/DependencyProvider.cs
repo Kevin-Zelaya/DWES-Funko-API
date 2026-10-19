@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using MongoDB.Driver;
 
 public class DependencyProvider
 {
@@ -8,7 +9,6 @@ public class DependencyProvider
         IServiceCollection _services
     )
     {
-        
         _services.Scan(scan => scan
             .FromAssemblyOf<FunkoController>()
             .AddClasses(classes => classes.AssignableTo<IScoped>())
@@ -21,8 +21,25 @@ public class DependencyProvider
             .AsImplementedInterfaces()
             .WithTransientLifetime());
         /// <summary> Configuración de postgres </summary>
-        _services.AddDbContext<AppDbContext>(options =>
-            options.UseNpgsql(AppConfig.ConnectionString));
-        
+
+        switch (AppConfig.Environment.ToLowerInvariant())
+        {
+            case "postgre":
+                {
+                    _services.AddDbContext<AppDbContext>(options =>
+                    options.UseNpgsql(AppConfig.ConnectionString));
+                    break;
+                }
+            case "mongoef":
+                {
+                    var client = new MongoClient(AppConfig.ConnectionString);
+                    _services.AddDbContext<AppDbContext>(options =>
+                        options.UseMongoDB(client, "tienda"));
+                    break;
+                }
+            default:
+                    throw new InvalidOperationException(
+                        $"Perfil no soportado: {AppConfig.Environment}");
+        }
     }
 }

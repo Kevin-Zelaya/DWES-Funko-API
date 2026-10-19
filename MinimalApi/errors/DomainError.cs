@@ -4,7 +4,7 @@ public record  DomainError(string Message, HttpStatusCode StatusCode);
 
 public record NotFoundError(string Message, HttpStatusCode StatusCode) : DomainError(Message, StatusCode)
 {
-    public static NotFoundError FromResource(string resource, int id) =>
+    public static NotFoundError FromResource(string resource, string id) =>
         new($"No existe {resource} con id {id}", HttpStatusCode.NotFound);
 }
 

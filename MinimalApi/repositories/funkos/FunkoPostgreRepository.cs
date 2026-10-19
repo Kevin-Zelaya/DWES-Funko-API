@@ -1,6 +1,7 @@
 
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using MongoDB.Bson;
 
 /// <summary>
 /// Repositorio de acceso a datos de Funkos mediante PostgreSQL.
@@ -18,7 +19,10 @@ public class PosgreRepository(
         Funko funko,
         CancellationToken ct = default)
     {
-    
+        /// Creamos id de la entidad para mantener
+        /// conpatibilidad con mongo
+        funko.Id = ObjectId.GenerateNewId().ToString();
+
         _context.Funkos.Add(funko);
 
         await _context.SaveChangesAsync(ct);
@@ -34,9 +38,9 @@ public class PosgreRepository(
     // READ
     // =========================================================
 
-    /// <inheritdoc cref="IFunkoRepository.GetFunkoByIdAsync(int, CancellationToken)"/>
+    /// <inheritdoc cref="IFunkoRepository.GetFunkoByIdAsync(string, CancellationToken)"/>
     public Task<Funko?> GetFunkoByIdAsync(
-        int id,
+        string id,
         CancellationToken ct = default)
     {
         return _context.Funkos
@@ -97,9 +101,9 @@ public class PosgreRepository(
     // UPDATE
     // =========================================================
 
-    /// <inheritdoc cref="IFunkoRepository.UpdateFunkoAsync(int, FunkoUpdateRequestDto, CancellationToken)"/>
+    /// <inheritdoc cref="IFunkoRepository.UpdateFunkoAsync(string, FunkoUpdateRequestDto, CancellationToken)"/>
     public async Task<Funko?> UpdateFunkoAsync(
-        int id,
+        string id,
         FunkoUpdateRequestDto funko,
         CancellationToken ct = default)
     {
@@ -121,9 +125,9 @@ public class PosgreRepository(
 
         return response;
     }
-    /// <inheritdoc cref="IFunkoRepository.UpdateCategoryFromFunkoAsync(int, CategoryUpdateRequestDto, CancellationToken)"/>
+    /// <inheritdoc cref="IFunkoRepository.UpdateCategoryFromFunkoAsync(string, CategoryUpdateRequestDto, CancellationToken)"/>
     public async Task<Funko?> UpdateCategoryFromFunkoAsync(
-        int id,
+        string id,
         CategoryUpdateRequestDto request,
         CancellationToken ct = default
     )
@@ -143,10 +147,10 @@ public class PosgreRepository(
 
         return response;
     }
-    /// <inheritdoc cref="IFunkoRepository.UpdateSuplierFromFunkoAsync(int, int, CancellationToken)"/>
+    /// <inheritdoc cref="IFunkoRepository.UpdateSuplierFromFunkoAsync(string, string, CancellationToken)"/>
     public async Task<Funko?> UpdateSuplierFromFunkoAsync(
-        int id,
-        int SupplierId,
+        string id,
+        string SupplierId,
         CancellationToken ct = default
     )
     {
@@ -169,9 +173,9 @@ public class PosgreRepository(
     // DELETE / RESTORE
     // =========================================================
 
-    /// <inheritdoc cref="IFunkoRepository.DeleteFunkoAsync(int, CancellationToken)"/>
+    /// <inheritdoc cref="IFunkoRepository.DeleteFunkoAsync(string, CancellationToken)"/>
     public async Task<bool> DeleteFunkoAsync(
-        int id,
+        string id,
         CancellationToken ct = default)
     {
         var response = await _context.Funkos
@@ -190,9 +194,9 @@ public class PosgreRepository(
         return true;
     }
 
-    /// <inheritdoc cref="IFunkoRepository.RestoreFunkoAsync(int, CancellationToken)"/>
+    /// <inheritdoc cref="IFunkoRepository.RestoreFunkoAsync(string, CancellationToken)"/>
     public async Task<Funko?> RestoreFunkoAsync(
-        int id,
+        string id,
         CancellationToken ct = default)
     {
         var response = await _context.Funkos
@@ -231,7 +235,7 @@ public class PosgreRepository(
     }
     /// <inheritdoc cref="IFunkoRepository.ExistSupplierByIdAsync(int, CancellationToken)"/>
     public async Task<bool> ExistSupplierByIdAsync(
-        int id,
+        string id,
         CancellationToken ct = default)
     {
         return await _context.Suppliers

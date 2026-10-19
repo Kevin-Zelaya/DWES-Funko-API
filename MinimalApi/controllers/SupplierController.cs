@@ -50,7 +50,7 @@ public class SupplierController(
     /// </summary>
     [HttpGet("{id:int}")]
     public async Task<ActionResult> GetSupplierById(
-        int id,
+        string id,
         CancellationToken ct)
     {
         var response = await _service.GetSupplierByIdAsync(id, ct);

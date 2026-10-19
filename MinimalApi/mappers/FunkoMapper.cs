@@ -3,7 +3,6 @@ public static class FunkoMapper
     
     public static Funko ToModel(this FunkoCreateRequestDto dto) => new()
     {
-        Id = 0,
         Name = dto.Name,
         Category = new Category
         {

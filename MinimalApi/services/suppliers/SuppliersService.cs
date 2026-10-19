@@ -51,9 +51,9 @@ public class SupplierService(
                 s.Items.Count, pageNumber, s.TotalPages));
     }
 
-    /// <inheritdoc cref="ISupplierService.GetSupplierByIdAsync(int, CancellationToken)"/>
+    /// <inheritdoc cref="ISupplierService.GetSupplierByIdAsync(string, CancellationToken)"/>
     public async Task<Result<SupplierDto, DomainError>> GetSupplierByIdAsync(
-        int id,
+        string id,
         CancellationToken ct = default)
     {
         _logger.LogDebug(

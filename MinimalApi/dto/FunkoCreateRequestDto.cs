@@ -27,8 +27,8 @@ public record FunkoCreateRequestDto(
     [param: Range(1, int.MaxValue)]
     int Number,
 
-    [param: Range(1, int.MaxValue)]
-    int SupplierId,
+    [param: Required(ErrorMessage = "Id del proveedor requerida")]
+    string SupplierId,
 
     [param: Required(ErrorMessage = "Categoría requerida")]
     CategoryUpdateRequestDto? Category,

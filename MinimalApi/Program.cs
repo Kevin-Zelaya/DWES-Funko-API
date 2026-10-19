@@ -1,34 +1,40 @@
-
-using Scalar.AspNetCore;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 builder.Services.AddOpenApi();
 
+// Logger de Serilog
+Log.Logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .CreateLogger();
 
+builder.Logging.AddSerilog(Log.Logger);
 
 builder.Services.AddControllers();
 
-DependencyProvider.Configure(
-    builder.Services
-);
+DependencyProvider.Configure(builder.Services);
 
 var app = builder.Build();
 
 app.UseHttpsRedirection();
 
-// Documentación con swagger 
+// Documentación OpenAPI
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
-    app.UseSwaggerUI(options => {
+
+    app.UseSwaggerUI(options =>
+    {
         options.SwaggerEndpoint("/openapi/v1.json", "Mi API V1");
     });
 }
 
-await app.InitializationDatabaseAsync("postgre");
+app.UseGlobalExceptionHandler();
 
 app.MapControllers();
-app.Run();
 
+// Inicialización según el proveedor seleccionado
+await app.InitializationDatabaseAsync(AppConfig.Environment);
+
+app.Run();

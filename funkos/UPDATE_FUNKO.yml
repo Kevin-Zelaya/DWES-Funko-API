@@ -1,0 +1,26 @@
+info:
+  name: UPDATE_FUNKO
+  type: http
+  seq: 6
+
+http:
+  method: PUT
+  url: http://localhost:5205/api/funkos
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Spider-Man",
+        "franchise": "Marvel",
+        "number": 123,
+        "exclusive": false,
+        "price": 14.99
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

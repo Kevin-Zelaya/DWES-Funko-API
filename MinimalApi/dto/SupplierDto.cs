@@ -1,4 +1,4 @@
 public record SupplierDto(
-    int Id,
+    string Id,
     string Name
 );
