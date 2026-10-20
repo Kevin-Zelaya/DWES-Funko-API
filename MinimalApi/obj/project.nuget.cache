@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kqVAmZPhE7s=",
+  "dgSpecHash": "dZweReqZFqA=",
   "success": true,
-  "projectFilePath": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
+  "projectFilePath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kenrr\\.nuget\\packages\\csharpfunctionalextensions\\3.7.0\\csharpfunctionalextensions.3.7.0.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
@@ -46,9 +46,9 @@
       "code": "NU1510",
       "level": "Warning",
       "message": "PackageReference Microsoft.Extensions.Configuration no se eliminará. Este paquete está disponible automáticamente y no es necesario hacer referencia a él explícitamente. Quite el elemento PackageReference.",
-      "projectPath": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
+      "projectPath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
       "warningLevel": 1,
-      "filePath": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
+      "filePath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
       "libraryId": "Microsoft.Extensions.Configuration",
       "targetGraphs": [
         "net10.0"
@@ -58,9 +58,9 @@
       "code": "NU1510",
       "level": "Warning",
       "message": "PackageReference Microsoft.Extensions.Configuration.Binder no se eliminará. Este paquete está disponible automáticamente y no es necesario hacer referencia a él explícitamente. Quite el elemento PackageReference.",
-      "projectPath": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
+      "projectPath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
       "warningLevel": 1,
-      "filePath": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
+      "filePath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
       "libraryId": "Microsoft.Extensions.Configuration.Binder",
       "targetGraphs": [
         "net10.0"
@@ -70,9 +70,9 @@
       "code": "NU1510",
       "level": "Warning",
       "message": "PackageReference Microsoft.Extensions.Configuration.Json no se eliminará. Este paquete está disponible automáticamente y no es necesario hacer referencia a él explícitamente. Quite el elemento PackageReference.",
-      "projectPath": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
+      "projectPath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
       "warningLevel": 1,
-      "filePath": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
+      "filePath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
       "libraryId": "Microsoft.Extensions.Configuration.Json",
       "targetGraphs": [
         "net10.0"

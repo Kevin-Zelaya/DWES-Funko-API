@@ -16,8 +16,8 @@
           "Npgsql.EntityFrameworkCore.PostgreSQL": "10.0.3",
           "Scalar.AspNetCore": "2.17.12",
           "Scrutor": "7.0.0",
-          "Swashbuckle.AspNetCore.SwaggerUI": "10.2.3",
-          "Serilog": "4.4.0"
+          "Serilog": "4.4.0",
+          "Swashbuckle.AspNetCore.SwaggerUI": "10.2.3"
         },
         "runtime": {
           "MinimalApi.dll": {}

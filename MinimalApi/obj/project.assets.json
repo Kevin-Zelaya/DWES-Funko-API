@@ -2549,8 +2549,8 @@
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 10.0.3",
       "Scalar.AspNetCore >= 2.17.12",
       "Scrutor >= 7.0.0",
-      "Swashbuckle.AspNetCore.SwaggerUI >= 10.2.3",
-      "serilog >= 4.4.0"
+      "Serilog >= 4.4.0",
+      "Swashbuckle.AspNetCore.SwaggerUI >= 10.2.3"
     ]
   },
   "packageFolders": {
@@ -2559,11 +2559,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
+      "projectUniqueName": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
       "projectName": "MinimalApi",
-      "projectPath": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
+      "projectPath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
       "packagesPath": "C:\\Users\\kenrr\\.nuget\\packages\\",
-      "outputPath": "F:\\Funkos\\MinimalApi\\obj\\",
+      "outputPath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kenrr\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -2644,13 +2644,13 @@
             "target": "Package",
             "version": "[7.0.0, )"
           },
+          "Serilog": {
+            "target": "Package",
+            "version": "[4.4.0, )"
+          },
           "Swashbuckle.AspNetCore.SwaggerUI": {
             "target": "Package",
             "version": "[10.2.3, )"
-          },
-          "serilog": {
-            "target": "Package",
-            "version": "[4.4.0, )"
           }
         },
         "imports": [
