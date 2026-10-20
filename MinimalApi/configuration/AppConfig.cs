@@ -4,7 +4,7 @@ public static class AppConfig
     {
         Environment = 
             System.Environment
-                .GetEnvironmentVariable("DOTNET_ENVIRONMENT")
+                .GetEnvironmentVariable("DOTNET_ENVIRONMENT")?
                 .ToLowerInvariant() 
             ?? "posgre";
             
@@ -23,10 +23,13 @@ public static class AppConfig
             .Build();
         ConnectionString = Configuration["ConnectionStrings:DefaultConnection"]
             ?? throw new ArgumentException("Error al obtener la propiedad ConnectionStrings:DefaultConnection");
+        shouldRecreateDb = Configuration.GetValue<bool?>("shouldRecreateDb") 
+            ?? throw new ArgumentException("Error al obtener la propiedad shouldRecreateDb");
     }
 
     public static IConfiguration Configuration {get; private set;}
     public static string ConnectionString {get; private set;}
 
-    public static string? Environment {get; private set;}
+    public static string Environment {get; private set;}
+    public static bool shouldRecreateDb {get; private set;}
 } 

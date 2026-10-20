@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
+using Serilog;
 
 public class DependencyProvider
 {
@@ -9,6 +10,7 @@ public class DependencyProvider
         IServiceCollection _services
     )
     {
+        Log.Information("[DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.");
         _services.Scan(scan => scan
             .FromAssemblyOf<FunkoController>()
             .AddClasses(classes => classes.AssignableTo<IScoped>())
@@ -21,7 +23,7 @@ public class DependencyProvider
             .AsImplementedInterfaces()
             .WithTransientLifetime());
         /// <summary> Configuración de postgres </summary>
-
+        Log.Information("[DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil");
         switch (AppConfig.Environment.ToLowerInvariant())
         {
             case "postgre":

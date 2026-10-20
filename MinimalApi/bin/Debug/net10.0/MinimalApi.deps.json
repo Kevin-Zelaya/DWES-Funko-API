@@ -19,12 +19,9 @@
           "Scalar.AspNetCore": "2.17.12",
           "Scrutor": "7.0.0",
           "Serilog": "4.4.0",
-<<<<<<< HEAD
           "Serilog.AspNetCore": "10.0.0",
           "Serilog.Sinks.Console": "6.1.1",
           "Serilog.Sinks.File": "7.0.0",
-=======
->>>>>>> main
           "Swashbuckle.AspNetCore.SwaggerUI": "10.2.3"
         },
         "runtime": {

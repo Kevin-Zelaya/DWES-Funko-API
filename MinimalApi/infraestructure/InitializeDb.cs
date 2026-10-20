@@ -5,7 +5,7 @@ public static class InitializationDb
 {
     public static async Task InitializationDatabaseAsync(
         this WebApplication app,
-         string contextType)
+        string contextType)
     {
         switch (contextType.ToLowerInvariant())
         {

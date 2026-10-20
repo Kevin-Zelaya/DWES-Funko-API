@@ -468,54 +468,6 @@
           }
         }
       },
-      "Microsoft.Extensions.Configuration/10.0.12": {
-        "type": "package",
-        "compile": {
-          "lib/net10.0/_._": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net10.0/_._": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Configuration.Binder/10.0.12": {
-        "type": "package",
-        "compile": {
-          "lib/net10.0/_._": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net10.0/_._": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/netstandard2.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Configuration.Json/10.0.12": {
-        "type": "package",
-        "compile": {
-          "lib/net10.0/_._": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net10.0/_._": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
       "Microsoft.Extensions.DependencyModel/10.0.12": {
         "type": "package",
         "compile": {
@@ -2267,106 +2219,6 @@
         "microsoft.entityframeworkcore.relational.nuspec"
       ]
     },
-    "Microsoft.Extensions.Configuration/10.0.12": {
-      "sha512": "e3IPP32CRNL031VZJAUTlCTG0YN7WFh4mN3fsSHTDQCJB+3+f0jGycv4fXk3rrftaY3B85XrQaj7sRthrOsavg==",
-      "type": "package",
-      "path": "microsoft.extensions.configuration/10.0.12",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "PACKAGE.md",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/Microsoft.Extensions.Configuration.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net8.0/_._",
-        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Configuration.targets",
-        "lib/net10.0/Microsoft.Extensions.Configuration.dll",
-        "lib/net10.0/Microsoft.Extensions.Configuration.xml",
-        "lib/net462/Microsoft.Extensions.Configuration.dll",
-        "lib/net462/Microsoft.Extensions.Configuration.xml",
-        "lib/net8.0/Microsoft.Extensions.Configuration.dll",
-        "lib/net8.0/Microsoft.Extensions.Configuration.xml",
-        "lib/net9.0/Microsoft.Extensions.Configuration.dll",
-        "lib/net9.0/Microsoft.Extensions.Configuration.xml",
-        "lib/netstandard2.0/Microsoft.Extensions.Configuration.dll",
-        "lib/netstandard2.0/Microsoft.Extensions.Configuration.xml",
-        "microsoft.extensions.configuration.10.0.12.nupkg.sha512",
-        "microsoft.extensions.configuration.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "Microsoft.Extensions.Configuration.Binder/10.0.12": {
-      "sha512": "dAgIf1TOr8KLs+aBRIbXUZBjHoSH4rDG8+XkX/Q6AZwkQdMA0+yPDKTHsieeXdZDfpOpZVHzOnuAb5Z2nX3KsA==",
-      "type": "package",
-      "path": "microsoft.extensions.configuration.binder/10.0.12",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "PACKAGE.md",
-        "THIRD-PARTY-NOTICES.TXT",
-        "analyzers/dotnet/cs/Microsoft.Extensions.Configuration.Binder.SourceGeneration.dll",
-        "analyzers/dotnet/cs/cs/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
-        "analyzers/dotnet/cs/de/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
-        "analyzers/dotnet/cs/es/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
-        "analyzers/dotnet/cs/fr/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
-        "analyzers/dotnet/cs/it/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
-        "analyzers/dotnet/cs/ja/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
-        "analyzers/dotnet/cs/ko/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
-        "analyzers/dotnet/cs/pl/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
-        "analyzers/dotnet/cs/pt-BR/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
-        "analyzers/dotnet/cs/ru/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
-        "analyzers/dotnet/cs/tr/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
-        "analyzers/dotnet/cs/zh-Hans/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
-        "analyzers/dotnet/cs/zh-Hant/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
-        "buildTransitive/netstandard2.0/Microsoft.Extensions.Configuration.Binder.targets",
-        "lib/net10.0/Microsoft.Extensions.Configuration.Binder.dll",
-        "lib/net10.0/Microsoft.Extensions.Configuration.Binder.xml",
-        "lib/net462/Microsoft.Extensions.Configuration.Binder.dll",
-        "lib/net462/Microsoft.Extensions.Configuration.Binder.xml",
-        "lib/net8.0/Microsoft.Extensions.Configuration.Binder.dll",
-        "lib/net8.0/Microsoft.Extensions.Configuration.Binder.xml",
-        "lib/net9.0/Microsoft.Extensions.Configuration.Binder.dll",
-        "lib/net9.0/Microsoft.Extensions.Configuration.Binder.xml",
-        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll",
-        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.xml",
-        "microsoft.extensions.configuration.binder.10.0.12.nupkg.sha512",
-        "microsoft.extensions.configuration.binder.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "Microsoft.Extensions.Configuration.Json/10.0.12": {
-      "sha512": "H4u2ZeIhjmRQvbHj7S7U4MK1kXb0khx3UtOWcir32VHczdFyIVF0lvHew/VVHmCF7Uk0QseAUaO7HyFKOCSiKA==",
-      "type": "package",
-      "path": "microsoft.extensions.configuration.json/10.0.12",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "PACKAGE.md",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/Microsoft.Extensions.Configuration.Json.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net8.0/_._",
-        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Configuration.Json.targets",
-        "lib/net10.0/Microsoft.Extensions.Configuration.Json.dll",
-        "lib/net10.0/Microsoft.Extensions.Configuration.Json.xml",
-        "lib/net462/Microsoft.Extensions.Configuration.Json.dll",
-        "lib/net462/Microsoft.Extensions.Configuration.Json.xml",
-        "lib/net8.0/Microsoft.Extensions.Configuration.Json.dll",
-        "lib/net8.0/Microsoft.Extensions.Configuration.Json.xml",
-        "lib/net9.0/Microsoft.Extensions.Configuration.Json.dll",
-        "lib/net9.0/Microsoft.Extensions.Configuration.Json.xml",
-        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Json.dll",
-        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Json.xml",
-        "lib/netstandard2.1/Microsoft.Extensions.Configuration.Json.dll",
-        "lib/netstandard2.1/Microsoft.Extensions.Configuration.Json.xml",
-        "microsoft.extensions.configuration.json.10.0.12.nupkg.sha512",
-        "microsoft.extensions.configuration.json.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
     "Microsoft.Extensions.DependencyModel/10.0.12": {
       "sha512": "rDPQVTxh/zMTDF7wHlRqL/jjZbwjAP6315ydBxj51pZW7qkAwGwjoSiMutxYI91xmOE3ZXjAGHbYRqzyJV7Urw==",
       "type": "package",
@@ -3104,9 +2956,6 @@
       "Microsoft.AspNetCore.OpenApi >= 10.0.12",
       "Microsoft.EntityFrameworkCore >= 10.0.12",
       "Microsoft.EntityFrameworkCore.Design >= 10.0.12",
-      "Microsoft.Extensions.Configuration >= 10.0.12",
-      "Microsoft.Extensions.Configuration.Binder >= 10.0.12",
-      "Microsoft.Extensions.Configuration.Json >= 10.0.12",
       "MongoDB.Bson >= 3.12.0",
       "MongoDB.EntityFrameworkCore >= 10.0.4",
       "Npgsql >= 10.0.3",
@@ -3126,11 +2975,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
+      "projectUniqueName": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
       "projectName": "MinimalApi",
-      "projectPath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
+      "projectPath": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
       "packagesPath": "C:\\Users\\kenrr\\.nuget\\packages\\",
-      "outputPath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\obj\\",
+      "outputPath": "F:\\Funkos\\MinimalApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kenrr\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -3180,18 +3029,6 @@
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
-            "target": "Package",
-            "version": "[10.0.12, )"
-          },
-          "Microsoft.Extensions.Configuration": {
-            "target": "Package",
-            "version": "[10.0.12, )"
-          },
-          "Microsoft.Extensions.Configuration.Binder": {
-            "target": "Package",
-            "version": "[10.0.12, )"
-          },
-          "Microsoft.Extensions.Configuration.Json": {
             "target": "Package",
             "version": "[10.0.12, )"
           },
@@ -3676,43 +3513,5 @@
         }
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema al leer el archivo de caché D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\obj\\project.nuget.cache : '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0."
-    },
-    {
-      "code": "NU1510",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "PackageReference Microsoft.Extensions.Configuration no se eliminará. Este paquete está disponible automáticamente y no es necesario hacer referencia a él explícitamente. Quite el elemento PackageReference.",
-      "libraryId": "Microsoft.Extensions.Configuration",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    },
-    {
-      "code": "NU1510",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "PackageReference Microsoft.Extensions.Configuration.Binder no se eliminará. Este paquete está disponible automáticamente y no es necesario hacer referencia a él explícitamente. Quite el elemento PackageReference.",
-      "libraryId": "Microsoft.Extensions.Configuration.Binder",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    },
-    {
-      "code": "NU1510",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "PackageReference Microsoft.Extensions.Configuration.Json no se eliminará. Este paquete está disponible automáticamente y no es necesario hacer referencia a él explícitamente. Quite el elemento PackageReference.",
-      "libraryId": "Microsoft.Extensions.Configuration.Json",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    }
-  ]
+  }
 }

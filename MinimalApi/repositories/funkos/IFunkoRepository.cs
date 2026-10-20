@@ -51,7 +51,7 @@ public interface IFunkoRepository
     /// <param name="funko">Data del funko</param>
     /// <param name="ct">Token a cancelación</param>
     /// <returns>Data actualiada</returns>
-    Task<Funko> UpdateFunkoAsync(string id, FunkoUpdateRequestDto funko, CancellationToken ct = default);
+    Task<Funko?> UpdateFunkoAsync(string id, FunkoUpdateRequestDto funko, CancellationToken ct = default);
     /// <summary>
     /// Auxiliar para obtener todas las categorias
     /// </summary>

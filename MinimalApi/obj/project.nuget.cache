@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nwDJDUW9R/g=",
+  "dgSpecHash": "q7mM0lvtLEk=",
   "success": true,
-  "projectFilePath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
+  "projectFilePath": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kenrr\\.nuget\\packages\\csharpfunctionalextensions\\3.7.0\\csharpfunctionalextensions.3.7.0.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
@@ -20,9 +20,6 @@
     "C:\\Users\\kenrr\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\10.0.12\\microsoft.entityframeworkcore.analyzers.10.0.12.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\microsoft.entityframeworkcore.design\\10.0.12\\microsoft.entityframeworkcore.design.10.0.12.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\10.0.12\\microsoft.entityframeworkcore.relational.10.0.12.nupkg.sha512",
-    "C:\\Users\\kenrr\\.nuget\\packages\\microsoft.extensions.configuration\\10.0.12\\microsoft.extensions.configuration.10.0.12.nupkg.sha512",
-    "C:\\Users\\kenrr\\.nuget\\packages\\microsoft.extensions.configuration.binder\\10.0.12\\microsoft.extensions.configuration.binder.10.0.12.nupkg.sha512",
-    "C:\\Users\\kenrr\\.nuget\\packages\\microsoft.extensions.configuration.json\\10.0.12\\microsoft.extensions.configuration.json.10.0.12.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\microsoft.extensions.dependencymodel\\10.0.12\\microsoft.extensions.dependencymodel.10.0.12.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\microsoft.openapi\\2.12.0\\microsoft.openapi.2.12.0.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\microsoft.visualstudio.solutionpersistence\\1.0.52\\microsoft.visualstudio.solutionpersistence.1.0.52.nupkg.sha512",
@@ -56,51 +53,5 @@
     "C:\\Users\\kenrr\\.nuget\\packages\\system.composition.typedparts\\9.0.0\\system.composition.typedparts.9.0.0.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\zstdsharp.port\\0.7.3\\zstdsharp.port.0.7.3.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "message": "Problema al leer el archivo de caché D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\obj\\project.nuget.cache : '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0.",
-      "projectPath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
-      "warningLevel": 1,
-      "filePath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
-      "targetGraphs": []
-    },
-    {
-      "code": "NU1510",
-      "level": "Warning",
-      "message": "PackageReference Microsoft.Extensions.Configuration no se eliminará. Este paquete está disponible automáticamente y no es necesario hacer referencia a él explícitamente. Quite el elemento PackageReference.",
-      "projectPath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
-      "warningLevel": 1,
-      "filePath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
-      "libraryId": "Microsoft.Extensions.Configuration",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    },
-    {
-      "code": "NU1510",
-      "level": "Warning",
-      "message": "PackageReference Microsoft.Extensions.Configuration.Binder no se eliminará. Este paquete está disponible automáticamente y no es necesario hacer referencia a él explícitamente. Quite el elemento PackageReference.",
-      "projectPath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
-      "warningLevel": 1,
-      "filePath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
-      "libraryId": "Microsoft.Extensions.Configuration.Binder",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    },
-    {
-      "code": "NU1510",
-      "level": "Warning",
-      "message": "PackageReference Microsoft.Extensions.Configuration.Json no se eliminará. Este paquete está disponible automáticamente y no es necesario hacer referencia a él explícitamente. Quite el elemento PackageReference.",
-      "projectPath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
-      "warningLevel": 1,
-      "filePath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
-      "libraryId": "Microsoft.Extensions.Configuration.Json",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    }
-  ]
+  "logs": []
 }

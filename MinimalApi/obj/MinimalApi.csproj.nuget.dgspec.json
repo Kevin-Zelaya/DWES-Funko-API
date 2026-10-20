@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj": {}
+    "F:\\Funkos\\MinimalApi\\MinimalApi.csproj": {}
   },
   "projects": {
-    "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj": {
+    "F:\\Funkos\\MinimalApi\\MinimalApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
+        "projectUniqueName": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
         "projectName": "MinimalApi",
-        "projectPath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
+        "projectPath": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
         "packagesPath": "C:\\Users\\kenrr\\.nuget\\packages\\",
-        "outputPath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\obj\\",
+        "outputPath": "F:\\Funkos\\MinimalApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kenrr\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -61,18 +61,6 @@
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
-              "target": "Package",
-              "version": "[10.0.12, )"
-            },
-            "Microsoft.Extensions.Configuration": {
-              "target": "Package",
-              "version": "[10.0.12, )"
-            },
-            "Microsoft.Extensions.Configuration.Binder": {
-              "target": "Package",
-              "version": "[10.0.12, )"
-            },
-            "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
               "version": "[10.0.12, )"
             },
