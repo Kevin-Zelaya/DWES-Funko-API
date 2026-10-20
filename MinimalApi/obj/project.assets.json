@@ -3126,11 +3126,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
+      "projectUniqueName": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
       "projectName": "MinimalApi",
-      "projectPath": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
+      "projectPath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
       "packagesPath": "C:\\Users\\kenrr\\.nuget\\packages\\",
-      "outputPath": "F:\\Funkos\\MinimalApi\\obj\\",
+      "outputPath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kenrr\\AppData\\Roaming\\NuGet\\NuGet.Config"
