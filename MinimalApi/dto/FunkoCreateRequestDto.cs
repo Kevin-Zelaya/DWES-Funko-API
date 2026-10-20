@@ -31,7 +31,7 @@ public record FunkoCreateRequestDto(
     string SupplierId,
 
     [param: Required(ErrorMessage = "Categoría requerida")]
-    CategoryUpdateRequestDto? Category,
+    CategoryUpdateRequestDto Category,
 
     bool Exclusive,
 

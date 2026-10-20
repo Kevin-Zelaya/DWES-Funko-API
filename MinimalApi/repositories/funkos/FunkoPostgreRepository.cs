@@ -39,24 +39,40 @@ public class PosgreRepository(
     // =========================================================
 
     /// <inheritdoc cref="IFunkoRepository.GetFunkoByIdAsync(string, CancellationToken)"/>
-    public Task<Funko?> GetFunkoByIdAsync(
+    public async Task<Funko?> GetFunkoByIdAsync(
         string id,
         CancellationToken ct = default)
     {
-        return _context.Funkos
+        Funko? funko = await _context.Funkos
             .AsNoTracking()
-            .Include(f => f.Supplier)
             .FirstOrDefaultAsync(f => f.Id == id, ct);
-    }
+        if(funko is null) return null;
+        await _context.Entry(funko) // Obtener el proveedor al que hace referencia
+            .Reference(f => f.Supplier)
+            .LoadAsync(ct);
+        return funko;
+    } // 
 
     /// <inheritdoc cref="IFunkoRepository.GetAllFunkosAsync(CancellationToken)"/>
-    public Task<List<Funko>> GetAllFunkosAsync(
-        CancellationToken ct = default)
+    public async Task<List<Funko>> GetAllFunkosAsync(CancellationToken ct = default)
     {
-        return _context.Funkos
+        // 1. Cargar colecciones founkos/Proveedores
+        List<Funko> funkos = await _context.Funkos
             .AsNoTracking()
-            .Include(f => f.Supplier)
             .ToListAsync(ct);
+        Dictionary<string, Supplier> suppliersDict = await _context.Suppliers
+            .AsNoTracking()
+            .ToDictionaryAsync(s => s.Id, ct); // a diccionario para mejores busquedas.
+        // 2. Asignar el proveedor a cada funko de forma directa
+        foreach (var funko in funkos)
+        {
+            if (suppliersDict.TryGetValue(funko.SupplierId, out var supplier))
+            {
+                funko.Supplier = supplier;
+            }
+        }
+
+        return funkos;
     }
 
     /// <inheritdoc cref="IFunkoRepository.GetPaginatedFunkosAsync(int, int, CancellationToken)"/>
@@ -71,25 +87,33 @@ public class PosgreRepository(
         int pageSize,
         CancellationToken ct = default)
     {
-        var query = _context.Funkos.AsNoTracking();
-
-        int count = await query.CountAsync(ct);
-
-        int totalPages = (int)Math.Ceiling(
-            (double)count / pageSize);
-
-        var items = await query
-            .Include(f => f.Supplier)
+        // 1. Cargar colecciones founkos/Proveedores
+        List<Funko> funkos= await _context.Funkos
+            .AsNoTracking()
             .OrderBy(f => f.Id)
             .Skip((pageNumber - 1) * pageSize)
             .Take(pageSize)
             .ToListAsync(ct);
-
+        Dictionary<string, Supplier> suppliersDict = await _context.Suppliers
+            .AsNoTracking()
+            .ToDictionaryAsync(s => s.Id, ct); // a diccionario para mejores busquedas.
+        // 2. Asignar el proveedor a cada funko de forma directa
+        foreach (var funko in funkos)
+        {
+            if (suppliersDict.TryGetValue(funko.SupplierId, out var supplier))
+            {
+                funko.Supplier = supplier;
+            }
+        }
+        // 3. Calcular metadatos
+        int count = funkos.Count;
+        int totalPages = (int)Math.Ceiling(
+            (double)count / pageSize);
         bool hasPreviousPage = pageNumber > 1;
         bool hasNextPage = pageNumber < totalPages;
 
         return (
-            items,
+            funkos,
             count,
             totalPages,
             hasPreviousPage,

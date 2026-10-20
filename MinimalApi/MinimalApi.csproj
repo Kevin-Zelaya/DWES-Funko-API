@@ -14,9 +14,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.12" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="10.0.12" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.12" />
+    <!-- Se eliminaron los paquetes redundantes de Configuration, Binder y Json -->
     <PackageReference Include="MongoDB.Bson" Version="3.12.0" />
     <PackageReference Include="MongoDB.EntityFrameworkCore" Version="10.0.4" />
     <PackageReference Include="Npgsql" Version="10.0.3" />
@@ -31,8 +29,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!-- Corregido el cierre de etiqueta de appsettings.json -->
     <None Update="appsettings.json">
-    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="appsettings.Posgre.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
