@@ -42,9 +42,9 @@ if(AppConfig.shouldRecreateDb)
     await app.InitializationDatabaseAsync(AppConfig.Environment);
 
 // Falta vaciar la bd en el caso de mongo
-Console.WriteLine("=====================================================");
-Console.WriteLine("=================     FUNKO API     =================");
-Console.WriteLine("=====================================================");
+Console.WriteLine("======================================================");
+Console.WriteLine("=================     FUNKO API     ==================");
+Console.WriteLine("======================================================");
 Console.WriteLine("");
 Console.WriteLine("+===================+================================== ");
 Console.WriteLine($"| api_environment   |      {AppConfig.Environment}    |");

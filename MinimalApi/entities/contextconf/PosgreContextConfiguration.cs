@@ -69,6 +69,7 @@ public abstract class PosgreContextConfiguration
             ///<summary> Filtro </summary>
             entity.HasQueryFilter(f => !f.IsDeleted);
 
+            if(!AppConfig.shouldRecreateDb) return;
             ///<summary> Semíllas </summary>
             entity.HasData(
                 new Supplier { Id = ObjectId.GenerateNewId().ToString(), Name = "Funko Europe", IsDeleted = false },

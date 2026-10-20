@@ -84,39 +84,27 @@ public static class MongoContextConfiguration
                 .IsRequired(false);
 
             entity.HasQueryFilter(s => !s.IsDeleted);
+
+            if(AppConfig.shouldRecreateDb) return;
+            entity.HasData(
+                new Supplier { Id = ObjectId.GenerateNewId().ToString(), Name = "Funko Europe", IsDeleted = false },
+                new Supplier { Id = ObjectId.GenerateNewId().ToString(), Name = "Collector Store", IsDeleted = false },
+                new Supplier { Id = ObjectId.GenerateNewId().ToString(), Name = "Pop In A Box", IsDeleted = false },
+                new Supplier { Id = ObjectId.GenerateNewId().ToString(), Name = "Entertainment Earth", IsDeleted = false },
+                new Supplier { Id = ObjectId.GenerateNewId().ToString(), Name = "BigBadToyStore", IsDeleted = false },
+                new Supplier { Id = ObjectId.GenerateNewId().ToString(), Name = "Amazon Collectibles", IsDeleted = false },
+                new Supplier { Id = ObjectId.GenerateNewId().ToString(), Name = "Geek Store", IsDeleted = false },
+                new Supplier { Id = ObjectId.GenerateNewId().ToString(), Name = "Comic World", IsDeleted = false },
+                new Supplier { Id = ObjectId.GenerateNewId().ToString(), Name = "Pop Culture Shop", IsDeleted = false },
+                new Supplier { Id = ObjectId.GenerateNewId().ToString(), Name = "Collector's Corner", IsDeleted = false }
+            );
+
+            Log.Information(
+                "[MONGODB] Se han insertado {Count} proveedores iniciales",
+                10);
         });
+
+        
     }
 
-    public static async Task SeedSuppliersAsync(
-        IMongoDatabase database)
-    {
-        var collection =
-            database.GetCollection<Supplier>("suppliers");
-
-        var count = await collection.CountDocumentsAsync(
-            FilterDefinition<Supplier>.Empty);
-
-        if (count > 0)
-            return;
-
-        var suppliers = new List<Supplier>
-        {
-            new() { Id = ObjectId.GenerateNewId().ToString(), Name = "Funko Europe", IsDeleted = false },
-            new() { Id = ObjectId.GenerateNewId().ToString(), Name = "Collector Store", IsDeleted = false },
-            new() { Id = ObjectId.GenerateNewId().ToString(), Name = "Pop In A Box", IsDeleted = false },
-            new() { Id = ObjectId.GenerateNewId().ToString(), Name = "Entertainment Earth", IsDeleted = false },
-            new() { Id = ObjectId.GenerateNewId().ToString(), Name = "BigBadToyStore", IsDeleted = false },
-            new() { Id = ObjectId.GenerateNewId().ToString(), Name = "Amazon Collectibles", IsDeleted = false },
-            new() { Id = ObjectId.GenerateNewId().ToString(), Name = "Geek Store", IsDeleted = false },
-            new() { Id = ObjectId.GenerateNewId().ToString(), Name = "Comic World", IsDeleted = false },
-            new() { Id = ObjectId.GenerateNewId().ToString(), Name = "Pop Culture Shop", IsDeleted = false },
-            new() { Id = ObjectId.GenerateNewId().ToString(), Name = "Collector's Corner", IsDeleted = false }
-        };
-
-        await collection.InsertManyAsync(suppliers);
-
-        Log.Information(
-            "[MONGODB] Se han insertado {Count} proveedores iniciales",
-            suppliers.Count);
-    }
 }

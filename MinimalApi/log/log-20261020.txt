@@ -365,3 +365,16 @@ MongoDB.Driver.Linq.ExpressionNotSupportedException: Expression not supported: t
 2026-10-20 13:19:45.550 [INF] [] [MONGODB] Se han insertado 10 proveedores iniciales
 2026-10-20 13:19:45.555 [INF] [] [MONGODB] Base de datos reinicializada
 2026-10-20 13:29:22.738 [WRN] [Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware] Failed to determine the https port for redirect.
+2026-10-20 17:09:24.264 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-20 17:09:24.980 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-20 17:09:25.110 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-20 17:09:26.225 [DBG] [] [POSTGRE] Eliminando y recreando la base de datos
+2026-10-20 17:09:26.683 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para el proveedor 'PosgreSql'
+2026-10-20 17:09:27.982 [INF] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-20 17:11:45.869 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-20 17:11:45.955 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-20 17:11:45.991 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-20 17:11:46.356 [DBG] [] [POSTGRE] Eliminando y recreando la base de datos
+2026-10-20 17:11:46.811 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para el proveedor 'PosgreSql'
+2026-10-20 17:11:46.883 [INF] [] [MONGODB] Se han insertado 10 proveedores iniciales
+2026-10-20 17:11:48.149 [INF] [] [POSGRE] Eliminando y recreando la base de datos
