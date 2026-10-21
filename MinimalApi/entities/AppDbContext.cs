@@ -6,8 +6,12 @@ public class AppDbContext : DbContext
 {
     public DbSet<Funko> Funkos {get; set;}
     public DbSet<Supplier> Suppliers {get; set;}
-    public AppDbContext(DbContextOptions options) : base(options)
+    public AppDbContext(DbContextOptions<AppDbContext> options)
+        : base(options)
     {
+        // Para solucionar problemas con el ensurecreate
+        // ya que da error por las transacciones
+        Database.AutoTransactionBehavior = AutoTransactionBehavior.Never;
     }
 
      protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -29,4 +33,5 @@ public class AppDbContext : DbContext
                     $"Entorno no soportado: {AppConfig.Environment}");
         }
     }
+    
 }

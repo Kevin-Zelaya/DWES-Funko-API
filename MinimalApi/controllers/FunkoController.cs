@@ -8,8 +8,7 @@ public class FunkoController(
 {
     // =========================================================
     // CREATE
-    // =========================================================
-
+    // =========================== 
     [HttpPost]
     public async Task<ActionResult<FunkoDto>> CreateFunko(
         [FromBody] FunkoCreateRequestDto dto)
