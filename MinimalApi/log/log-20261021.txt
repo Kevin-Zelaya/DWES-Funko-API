@@ -7,3 +7,23 @@
 2026-10-21 13:31:45.999 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
 2026-10-21 13:31:46.043 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
 2026-10-21 13:31:46.058 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-21 13:32:08.560 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-21 13:32:08.603 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-21 13:32:08.618 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-21 13:32:09.187 [DBG] [] [POSTGRE] Eliminando y recreando la base de datos
+2026-10-21 13:32:09.473 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para el proveedor 'PosgreSql'
+2026-10-21 13:32:09.597 [INF] [] [MONGODB] Se han insertado 10 proveedores iniciales
+2026-10-21 13:32:10.309 [INF] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-21 13:32:40.443 [WRN] [Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware] Failed to determine the https port for redirect.
+2026-10-21 13:32:40.505 [DBG] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Recuperando página 1 con tamaño 5.
+2026-10-21 13:32:40.816 [INF] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Se recuperaron 5 proveedores de la página 1 de 2.
+2026-10-21 13:32:58.445 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-21 13:32:58.720 [INF] [FunkoService] [SERVICE-CREATE] Funko creado correctamente con ID 6ad8a2ea8d4a302a578a0640.
+2026-10-21 13:33:08.884 [DBG] [FunkoService] [SERVICE-GET] Buscando Funko con ID 6ad8a2ea8d4a302a578a0640.
+2026-10-21 13:33:08.954 [INF] [FunkoService] [SERVICE-GET] Funko con ID 6ad8a2ea8d4a302a578a0640 recuperado correctamente.
+2026-10-21 13:33:19.215 [DBG] [FunkoService] [SERVICE-GET] Buscando Funko con ID 6ad8a2ea8d4a302a578a0640.
+2026-10-21 13:33:19.223 [INF] [FunkoService] [SERVICE-GET] Funko con ID 6ad8a2ea8d4a302a578a0640 recuperado correctamente desde la cache.
+2026-10-21 13:33:19.235 [INF] [FunkoService] [SERVICE-GET] Funko con ID 6ad8a2ea8d4a302a578a0640 recuperado correctamente.
+2026-10-21 13:33:51.595 [DBG] [FunkoService] [SERVICE-GET] Buscando Funko con ID 6ad8a2ea8d4a302a578a0640.
+2026-10-21 13:33:51.597 [INF] [FunkoService] [SERVICE-GET] Funko con ID 6ad8a2ea8d4a302a578a0640 recuperado correctamente desde la cache.
+2026-10-21 13:33:51.604 [INF] [FunkoService] [SERVICE-GET] Funko con ID 6ad8a2ea8d4a302a578a0640 recuperado correctamente.
