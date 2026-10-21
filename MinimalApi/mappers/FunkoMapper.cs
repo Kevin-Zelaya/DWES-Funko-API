@@ -15,6 +15,21 @@ public static class FunkoMapper
         Price = dto.Price,
         Franchise = dto.Franchise
     };
+
+    public static Funko ToModel(this FunkoDto dto) => new()
+    {
+        Name = dto.Name,
+        Category = new Category
+        {
+            Name = dto.Category.Name,
+            Description = dto.Category.Description
+        },
+        Exclusive = dto.Exclusive,
+        Number = dto.Number,
+        SupplierId = dto.Supplier.Id,
+        Price = dto.Price,
+        Franchise = dto.Franchise
+    };
     public static FunkoDto ToDto(this Funko entity) => new FunkoDto(
         Id: entity.Id,
         Name: entity.Name,

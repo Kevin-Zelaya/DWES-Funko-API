@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj": {}
+    "F:\\Funkos\\MinimalApi\\MinimalApi.csproj": {}
   },
   "projects": {
-    "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj": {
+    "F:\\Funkos\\MinimalApi\\MinimalApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
+        "projectUniqueName": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
         "projectName": "MinimalApi",
-        "projectPath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\MinimalApi.csproj",
+        "projectPath": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
         "packagesPath": "C:\\Users\\kenrr\\.nuget\\packages\\",
-        "outputPath": "D:\\DAW\\PrimerTrimestre\\ES\\Clase\\MinimalApi\\MinimalApi\\obj\\",
+        "outputPath": "F:\\Funkos\\MinimalApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kenrr\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -103,6 +103,10 @@
             "Serilog.Sinks.File": {
               "target": "Package",
               "version": "[7.0.0, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[3.4.5, )"
             },
             "Swashbuckle.AspNetCore.SwaggerUI": {
               "target": "Package",

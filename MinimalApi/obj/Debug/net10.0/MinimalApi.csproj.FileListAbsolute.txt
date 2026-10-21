@@ -286,3 +286,6 @@ D:\DAW\PrimerTrimestre\ES\Clase\MinimalApi\MinimalApi\obj\Debug\net10.0\refint\M
 D:\DAW\PrimerTrimestre\ES\Clase\MinimalApi\MinimalApi\obj\Debug\net10.0\MinimalApi.pdb
 D:\DAW\PrimerTrimestre\ES\Clase\MinimalApi\MinimalApi\obj\Debug\net10.0\MinimalApi.genruntimeconfig.cache
 D:\DAW\PrimerTrimestre\ES\Clase\MinimalApi\MinimalApi\obj\Debug\net10.0\ref\MinimalApi.dll
+F:\Funkos\MinimalApi\bin\Debug\net10.0\RESPite.dll
+F:\Funkos\MinimalApi\bin\Debug\net10.0\StackExchange.Redis.dll
+F:\Funkos\MinimalApi\bin\Debug\net10.0\System.IO.Hashing.dll

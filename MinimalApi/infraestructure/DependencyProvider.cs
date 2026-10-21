@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using Serilog;
+using StackExchange.Redis;
 
 public class DependencyProvider
 {
@@ -43,5 +44,11 @@ public class DependencyProvider
                     throw new InvalidOperationException(
                         $"Perfil no soportado: {AppConfig.Environment}");
         }
+        ////<summary> Dependencias en común </summary>
+        var redis = ConnectionMultiplexer.Connect(
+            AppConfig.RedisConnection
+        );
+        _services.AddSingleton<IConnectionMultiplexer>(redis);
+
     }
 }

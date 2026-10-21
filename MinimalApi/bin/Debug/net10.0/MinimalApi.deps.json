@@ -22,6 +22,7 @@
           "Serilog.AspNetCore": "10.0.0",
           "Serilog.Sinks.Console": "6.1.1",
           "Serilog.Sinks.File": "7.0.0",
+          "StackExchange.Redis": "3.4.5",
           "Swashbuckle.AspNetCore.SwaggerUI": "10.2.3"
         },
         "runtime": {
@@ -491,6 +492,14 @@
           }
         }
       },
+      "RESPite/3.4.5": {
+        "runtime": {
+          "lib/net10.0/RESPite.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.4.5.54687"
+          }
+        }
+      },
       "Scalar.AspNetCore/2.17.12": {
         "runtime": {
           "lib/net10.0/Scalar.AspNetCore.dll": {
@@ -630,6 +639,18 @@
           }
         }
       },
+      "StackExchange.Redis/3.4.5": {
+        "dependencies": {
+          "RESPite": "3.4.5",
+          "System.IO.Hashing": "10.0.12"
+        },
+        "runtime": {
+          "lib/net10.0/StackExchange.Redis.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.4.5.54687"
+          }
+        }
+      },
       "Swashbuckle.AspNetCore.SwaggerUI/10.2.3": {
         "runtime": {
           "lib/net10.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
@@ -703,6 +724,14 @@
           "lib/net9.0/System.Composition.TypedParts.dll": {
             "assemblyVersion": "9.0.0.0",
             "fileVersion": "9.0.24.52809"
+          }
+        }
+      },
+      "System.IO.Hashing/10.0.12": {
+        "runtime": {
+          "lib/net10.0/System.IO.Hashing.dll": {
+            "assemblyVersion": "10.0.0.12",
+            "fileVersion": "10.0.1226.42308"
           }
         }
       },
@@ -890,6 +919,13 @@
       "path": "npgsql.entityframeworkcore.postgresql/10.0.3",
       "hashPath": "npgsql.entityframeworkcore.postgresql.10.0.3.nupkg.sha512"
     },
+    "RESPite/3.4.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EzMx67+IXC8lQRI78yeSBWKCTn9qvSIaale6XZ1RJLKpr2NJqmptgn3UqgguWqoeGUsoohiy3SWeiVLAj1n9DA==",
+      "path": "respite/3.4.5",
+      "hashPath": "respite.3.4.5.nupkg.sha512"
+    },
     "Scalar.AspNetCore/2.17.12": {
       "type": "package",
       "serviceable": true,
@@ -981,6 +1017,13 @@
       "path": "snappier/1.3.1",
       "hashPath": "snappier.1.3.1.nupkg.sha512"
     },
+    "StackExchange.Redis/3.4.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LtbEuNmaW6N75tvLAlXoDGDJHTCwmrHFL8/9OeQknWoCWcZhUcUnPvG2ijSO7tTyC7XID9LskIu42spa0b/nMQ==",
+      "path": "stackexchange.redis/3.4.5",
+      "hashPath": "stackexchange.redis.3.4.5.nupkg.sha512"
+    },
     "Swashbuckle.AspNetCore.SwaggerUI/10.2.3": {
       "type": "package",
       "serviceable": true,
@@ -1036,6 +1079,13 @@
       "sha512": "sha512-aRZlojCCGEHDKqh43jaDgaVpYETsgd7Nx4g1zwLKMtv4iTo0627715ajEFNpEEBTgLmvZuv8K0EVxc3sM4NWJA==",
       "path": "system.composition.typedparts/9.0.0",
       "hashPath": "system.composition.typedparts.9.0.0.nupkg.sha512"
+    },
+    "System.IO.Hashing/10.0.12": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jDix4bBMYnpZdSPcnY+KDV6ik3SRMzpMKby/bZl/XUwIiflwRNAFZ0oOl61R/pSaveIJ8t1gs2BUlrGsPs/bcg==",
+      "path": "system.io.hashing/10.0.12",
+      "hashPath": "system.io.hashing.10.0.12.nupkg.sha512"
     },
     "ZstdSharp.Port/0.7.3": {
       "type": "package",

@@ -6,7 +6,7 @@ public static class AppConfig
             System.Environment
                 .GetEnvironmentVariable("DOTNET_ENVIRONMENT")?
                 .ToLowerInvariant() 
-            ?? "posgre";
+            ?? "postgre";
             
         Configuration = new ConfigurationBuilder()
             .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
@@ -16,7 +16,7 @@ public static class AppConfig
                 reloadOnChange: true
             )
             .AddJsonFile(
-                 $"appsettings.{(Environment is "mongoef" or "mongo" ? "Mongo" : Environment)}.json",
+                 $"appsettings.{(Environment is "mongoef" or "mongo" ? "mongo" : Environment)}.json",
                 optional: false,
                 reloadOnChange: true
             )
@@ -25,6 +25,8 @@ public static class AppConfig
             ?? throw new ArgumentException("Error al obtener la propiedad ConnectionStrings:DefaultConnection");
         shouldRecreateDb = Configuration.GetValue<bool?>("shouldRecreateDb") 
             ?? throw new ArgumentException("Error al obtener la propiedad shouldRecreateDb");
+        RedisConnection = Configuration["Redis:ConnectionString"]
+            ?? throw new ArgumentException("Error al obtener la propiedad shouldRecreateDb");
     }
 
     public static IConfiguration Configuration {get; private set;}
@@ -32,4 +34,5 @@ public static class AppConfig
 
     public static string Environment {get; private set;}
     public static bool shouldRecreateDb {get; private set;}
+    public static string RedisConnection {get; private set;}
 } 
