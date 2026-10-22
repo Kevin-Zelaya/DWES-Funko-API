@@ -2,10 +2,13 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using MongoDB.Bson;
+using Serilog;
 
 /// <summary>
 /// Repositorio de acceso a datos de Funkos mediante PostgreSQL.
 /// </summary>
+/// 
+/// TODO: Hacer control de concurrencia en los patch y updates
 public class PosgreRepository(
     AppDbContext _context
 ) : IFunkoRepository, IScoped
@@ -145,7 +148,17 @@ public class PosgreRepository(
         response.Price = funko.Price;
         response.UpdatedAt = DateTime.UtcNow;
 
-        await _context.SaveChangesAsync(ct);
+        try
+        {
+            _context.Entry(response)
+                .Property(f => f.RowVersion)
+                .OriginalValue = funko.RowVersion;
+            await _context.SaveChangesAsync(ct);
+        } catch(DbUpdateConcurrencyException ex)
+        {
+            Log.Error("[REPOSITORY-UPDATE] Error de concurrencia, al actualizar el funko con id {id}", id);
+            throw ex;
+        }
 
         return response;
     }

@@ -67,5 +67,4 @@ public class SupplierPostgreRepository(
             .AsNoTracking()
             .FirstOrDefaultAsync(s => s.Id == id, ct);
     }
-    /// hacer comprobación de si el supplier existe en el repositorio
 }

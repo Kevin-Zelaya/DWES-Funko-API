@@ -33,6 +33,8 @@ public abstract class PosgreContextConfiguration
             entity.Property(p => p.UpdatedAt).IsRequired(false).HasDefaultValue(null);
             ///<summary> Fecha de eliminado </summary>
             entity.Property(p => p.DeleteAT).IsRequired(false).HasDefaultValue(null);
+            ///<summary> Versión de la fila para control de concurrencia </summary>
+            entity.Property(s => s.RowVersion).IsRowVersion();
             //<summary> Conversión de categoría a json </summary>
             entity.ComplexProperty(
                 f => f.Category,
@@ -51,7 +53,9 @@ public abstract class PosgreContextConfiguration
         {
             ///<summary> Key de categoria se genera automaticamente </summary>
             entity.HasKey(s => s.Id);
-            entity.Property(s=> s.Id).ValueGeneratedOnAdd();
+            entity.Property(s=> s.Id)
+                .HasValueGenerator<YoutubeIdValueGenerator>()
+                .ValueGeneratedOnAdd();
             ///<summary> 
             ///     Nombre como indice 
             ///     requerido y largo máximo de 100
@@ -72,16 +76,16 @@ public abstract class PosgreContextConfiguration
             if(!AppConfig.shouldRecreateDb) return;
             ///<summary> Semíllas </summary>
             entity.HasData(
-                new Supplier { Id = ObjectId.GenerateNewId().ToString(), Name = "Funko Europe", IsDeleted = false },
-                new Supplier { Id = ObjectId.GenerateNewId().ToString(), Name = "Collector Store", IsDeleted = false },
-                new Supplier { Id = ObjectId.GenerateNewId().ToString(), Name = "Pop In A Box", IsDeleted = false },
-                new Supplier { Id = ObjectId.GenerateNewId().ToString(), Name = "Entertainment Earth", IsDeleted = false },
-                new Supplier { Id = ObjectId.GenerateNewId().ToString(), Name = "BigBadToyStore", IsDeleted = false },
-                new Supplier { Id = ObjectId.GenerateNewId().ToString(), Name = "Amazon Collectibles", IsDeleted = false },
-                new Supplier { Id = ObjectId.GenerateNewId().ToString(), Name = "Geek Store", IsDeleted = false },
-                new Supplier { Id = ObjectId.GenerateNewId().ToString(), Name = "Comic World", IsDeleted = false },
-                new Supplier { Id = ObjectId.GenerateNewId().ToString(), Name = "Pop Culture Shop", IsDeleted = false },
-                new Supplier { Id = ObjectId.GenerateNewId().ToString(), Name = "Collector's Corner", IsDeleted = false }
+                new Supplier { Id = YoutubeIdValueGenerator.GenerateId(), Name = "Funko Europe", IsDeleted = false },
+                new Supplier { Id = YoutubeIdValueGenerator.GenerateId(), Name = "Collector Store", IsDeleted = false },
+                new Supplier { Id = YoutubeIdValueGenerator.GenerateId(), Name = "Pop In A Box", IsDeleted = false },
+                new Supplier { Id = YoutubeIdValueGenerator.GenerateId(), Name = "Entertainment Earth", IsDeleted = false },
+                new Supplier { Id = YoutubeIdValueGenerator.GenerateId(), Name = "BigBadToyStore", IsDeleted = false },
+                new Supplier { Id = YoutubeIdValueGenerator.GenerateId(), Name = "Amazon Collectibles", IsDeleted = false },
+                new Supplier { Id = YoutubeIdValueGenerator.GenerateId(), Name = "Geek Store", IsDeleted = false },
+                new Supplier { Id = YoutubeIdValueGenerator.GenerateId(), Name = "Comic World", IsDeleted = false },
+                new Supplier { Id = YoutubeIdValueGenerator.GenerateId(), Name = "Pop Culture Shop", IsDeleted = false },
+                new Supplier { Id = YoutubeIdValueGenerator.GenerateId(), Name = "Collector's Corner", IsDeleted = false }
             );
 
             Log.Information(

@@ -13,4 +13,6 @@ public class Funko
     public DateTime CreatedAt { get; set; }
     public DateTime? UpdatedAt { get; set; }
     public DateTime? DeleteAT {get; set;}
+    // control de concurrencia
+    public uint RowVersion {get; set;}
 }

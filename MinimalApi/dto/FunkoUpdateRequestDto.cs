@@ -28,5 +28,7 @@ public record FunkoUpdateRequestDto(
     bool Exclusive,
 
     [param: Range(0.01, 1000000)]
-    double Price
+    double Price,
+
+    uint RowVersion
 );

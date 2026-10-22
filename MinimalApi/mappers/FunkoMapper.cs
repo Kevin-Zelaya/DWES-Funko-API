@@ -28,7 +28,8 @@ public static class FunkoMapper
         Number = dto.Number,
         SupplierId = dto.Supplier.Id,
         Price = dto.Price,
-        Franchise = dto.Franchise
+        Franchise = dto.Franchise,
+        RowVersion = dto.RowVersion
     };
     public static FunkoDto ToDto(this Funko entity) => new FunkoDto(
         Id: entity.Id,
@@ -44,7 +45,8 @@ public static class FunkoMapper
         Supplier: new SupplierDto(
             Id: entity.Supplier.Id,
             Name: entity.Supplier.Name
-        )
+        ),
+        RowVersion : entity.RowVersion
     );
 
 

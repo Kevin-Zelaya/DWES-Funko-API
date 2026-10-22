@@ -7,5 +7,7 @@ public class Supplier
     public DateTime? DeleteAt {get; set;}
     public DateTime? UpdateAt {get; set;}
     public ICollection<Funko> Funkos = []; 
+    // Control de concurrencia
+    // public uint RowVersion {get; set;}
 
 }

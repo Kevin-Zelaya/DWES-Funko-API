@@ -1,5 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using Microsoft.EntityFrameworkCore;
 
 public class GlobalExceptionHandler(
     RequestDelegate next,
@@ -26,6 +27,7 @@ public class GlobalExceptionHandler(
 
         var statusCode = exception switch
         {
+            DbUpdateConcurrencyException => StatusCodes.Status409Conflict,
             ArgumentException => StatusCodes.Status400BadRequest,
             UnauthorizedAccessException => StatusCodes.Status401Unauthorized,
             TimeoutException => StatusCodes.Status408RequestTimeout,
@@ -34,6 +36,7 @@ public class GlobalExceptionHandler(
 
         var message = exception switch
         {
+            DbUpdateConcurrencyException => "El recurso ha sido modificado por otro usuario. Recarga los datos e inténtalo de nuevo.",
             ArgumentException arg => arg.Message,
             UnauthorizedAccessException => "No autorizado",
             TimeoutException => "Tiempo de espera agotado",
