@@ -48,7 +48,7 @@ public class SupplierController(
     /// <summary>
     /// Obtiene un proveedor por su ID.
     /// </summary>
-    [HttpGet("{id:int}")]
+    [HttpGet("{id}")]
     public async Task<ActionResult> GetSupplierById(
         string id,
         CancellationToken ct)
