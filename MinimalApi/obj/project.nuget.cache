@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "kqVAmZPhE7s=",
+  "dgSpecHash": "LN5bYNs08PM=",
   "success": true,
   "projectFilePath": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kenrr\\.nuget\\packages\\csharpfunctionalextensions\\3.7.0\\csharpfunctionalextensions.3.7.0.nupkg.sha512",
+    "C:\\Users\\kenrr\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.12\\microsoft.aspnetcore.openapi.10.0.12.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\microsoft.build.framework\\18.0.2\\microsoft.build.framework.18.0.2.nupkg.sha512",
@@ -19,19 +20,31 @@
     "C:\\Users\\kenrr\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\10.0.12\\microsoft.entityframeworkcore.analyzers.10.0.12.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\microsoft.entityframeworkcore.design\\10.0.12\\microsoft.entityframeworkcore.design.10.0.12.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\10.0.12\\microsoft.entityframeworkcore.relational.10.0.12.nupkg.sha512",
-    "C:\\Users\\kenrr\\.nuget\\packages\\microsoft.extensions.configuration\\10.0.12\\microsoft.extensions.configuration.10.0.12.nupkg.sha512",
-    "C:\\Users\\kenrr\\.nuget\\packages\\microsoft.extensions.configuration.binder\\10.0.12\\microsoft.extensions.configuration.binder.10.0.12.nupkg.sha512",
-    "C:\\Users\\kenrr\\.nuget\\packages\\microsoft.extensions.configuration.json\\10.0.12\\microsoft.extensions.configuration.json.10.0.12.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\microsoft.extensions.dependencymodel\\10.0.12\\microsoft.extensions.dependencymodel.10.0.12.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\microsoft.openapi\\2.12.0\\microsoft.openapi.2.12.0.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\microsoft.visualstudio.solutionpersistence\\1.0.52\\microsoft.visualstudio.solutionpersistence.1.0.52.nupkg.sha512",
+    "C:\\Users\\kenrr\\.nuget\\packages\\mongodb.bson\\3.12.0\\mongodb.bson.3.12.0.nupkg.sha512",
+    "C:\\Users\\kenrr\\.nuget\\packages\\mongodb.driver\\3.11.2\\mongodb.driver.3.11.2.nupkg.sha512",
+    "C:\\Users\\kenrr\\.nuget\\packages\\mongodb.entityframeworkcore\\10.0.4\\mongodb.entityframeworkcore.10.0.4.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\mono.texttemplating\\3.0.0\\mono.texttemplating.3.0.0.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\newtonsoft.json\\13.0.4\\newtonsoft.json.13.0.4.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\npgsql\\10.0.3\\npgsql.10.0.3.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\10.0.3\\npgsql.entityframeworkcore.postgresql.10.0.3.nupkg.sha512",
+    "C:\\Users\\kenrr\\.nuget\\packages\\respite\\3.4.5\\respite.3.4.5.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\scalar.aspnetcore\\2.17.12\\scalar.aspnetcore.2.17.12.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\scrutor\\7.0.0\\scrutor.7.0.0.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\serilog\\4.4.0\\serilog.4.4.0.nupkg.sha512",
+    "C:\\Users\\kenrr\\.nuget\\packages\\serilog.aspnetcore\\10.0.0\\serilog.aspnetcore.10.0.0.nupkg.sha512",
+    "C:\\Users\\kenrr\\.nuget\\packages\\serilog.extensions.hosting\\10.0.0\\serilog.extensions.hosting.10.0.0.nupkg.sha512",
+    "C:\\Users\\kenrr\\.nuget\\packages\\serilog.extensions.logging\\10.0.0\\serilog.extensions.logging.10.0.0.nupkg.sha512",
+    "C:\\Users\\kenrr\\.nuget\\packages\\serilog.formatting.compact\\3.0.0\\serilog.formatting.compact.3.0.0.nupkg.sha512",
+    "C:\\Users\\kenrr\\.nuget\\packages\\serilog.settings.configuration\\10.0.0\\serilog.settings.configuration.10.0.0.nupkg.sha512",
+    "C:\\Users\\kenrr\\.nuget\\packages\\serilog.sinks.console\\6.1.1\\serilog.sinks.console.6.1.1.nupkg.sha512",
+    "C:\\Users\\kenrr\\.nuget\\packages\\serilog.sinks.debug\\3.0.0\\serilog.sinks.debug.3.0.0.nupkg.sha512",
+    "C:\\Users\\kenrr\\.nuget\\packages\\serilog.sinks.file\\7.0.0\\serilog.sinks.file.7.0.0.nupkg.sha512",
+    "C:\\Users\\kenrr\\.nuget\\packages\\sharpcompress\\0.48.1\\sharpcompress.0.48.1.nupkg.sha512",
+    "C:\\Users\\kenrr\\.nuget\\packages\\snappier\\1.3.1\\snappier.1.3.1.nupkg.sha512",
+    "C:\\Users\\kenrr\\.nuget\\packages\\stackexchange.redis\\3.4.5\\stackexchange.redis.3.4.5.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\10.2.3\\swashbuckle.aspnetcore.swaggerui.10.2.3.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\system.codedom\\6.0.0\\system.codedom.6.0.0.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\system.composition\\9.0.0\\system.composition.9.0.0.nupkg.sha512",
@@ -39,44 +52,9 @@
     "C:\\Users\\kenrr\\.nuget\\packages\\system.composition.convention\\9.0.0\\system.composition.convention.9.0.0.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\system.composition.hosting\\9.0.0\\system.composition.hosting.9.0.0.nupkg.sha512",
     "C:\\Users\\kenrr\\.nuget\\packages\\system.composition.runtime\\9.0.0\\system.composition.runtime.9.0.0.nupkg.sha512",
-    "C:\\Users\\kenrr\\.nuget\\packages\\system.composition.typedparts\\9.0.0\\system.composition.typedparts.9.0.0.nupkg.sha512"
+    "C:\\Users\\kenrr\\.nuget\\packages\\system.composition.typedparts\\9.0.0\\system.composition.typedparts.9.0.0.nupkg.sha512",
+    "C:\\Users\\kenrr\\.nuget\\packages\\system.io.hashing\\10.0.12\\system.io.hashing.10.0.12.nupkg.sha512",
+    "C:\\Users\\kenrr\\.nuget\\packages\\zstdsharp.port\\0.7.3\\zstdsharp.port.0.7.3.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1510",
-      "level": "Warning",
-      "message": "PackageReference Microsoft.Extensions.Configuration no se eliminará. Este paquete está disponible automáticamente y no es necesario hacer referencia a él explícitamente. Quite el elemento PackageReference.",
-      "projectPath": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
-      "warningLevel": 1,
-      "filePath": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
-      "libraryId": "Microsoft.Extensions.Configuration",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    },
-    {
-      "code": "NU1510",
-      "level": "Warning",
-      "message": "PackageReference Microsoft.Extensions.Configuration.Binder no se eliminará. Este paquete está disponible automáticamente y no es necesario hacer referencia a él explícitamente. Quite el elemento PackageReference.",
-      "projectPath": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
-      "warningLevel": 1,
-      "filePath": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
-      "libraryId": "Microsoft.Extensions.Configuration.Binder",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    },
-    {
-      "code": "NU1510",
-      "level": "Warning",
-      "message": "PackageReference Microsoft.Extensions.Configuration.Json no se eliminará. Este paquete está disponible automáticamente y no es necesario hacer referencia a él explícitamente. Quite el elemento PackageReference.",
-      "projectPath": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
-      "warningLevel": 1,
-      "filePath": "F:\\Funkos\\MinimalApi\\MinimalApi.csproj",
-      "libraryId": "Microsoft.Extensions.Configuration.Json",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    }
-  ]
+  "logs": []
 }

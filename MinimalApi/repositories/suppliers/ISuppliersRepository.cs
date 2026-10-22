@@ -35,7 +35,7 @@ public interface ISupplierRepository
     /// <param name="ct">Token de cancelación.</param>
     /// <returns>El proveedor encontrado o null si no existe.</returns>
     Task<Supplier?> GetSupplierByIdAsync(
-        int id,
+        string id,
         CancellationToken ct = default
     );
 }

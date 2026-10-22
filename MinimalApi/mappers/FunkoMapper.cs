@@ -3,7 +3,6 @@ public static class FunkoMapper
     
     public static Funko ToModel(this FunkoCreateRequestDto dto) => new()
     {
-        Id = 0,
         Name = dto.Name,
         Category = new Category
         {
@@ -13,6 +12,21 @@ public static class FunkoMapper
         Exclusive = dto.Exclusive,
         Number = dto.Number,
         SupplierId = dto.SupplierId,
+        Price = dto.Price,
+        Franchise = dto.Franchise
+    };
+
+    public static Funko ToModel(this FunkoDto dto) => new()
+    {
+        Name = dto.Name,
+        Category = new Category
+        {
+            Name = dto.Category.Name,
+            Description = dto.Category.Description
+        },
+        Exclusive = dto.Exclusive,
+        Number = dto.Number,
+        SupplierId = dto.Supplier.Id,
         Price = dto.Price,
         Franchise = dto.Franchise
     };

@@ -1,6 +1,7 @@
 
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using MongoDB.Bson;
 
 /// <summary>
 /// Repositorio de acceso a datos de Funkos mediante PostgreSQL.
@@ -18,7 +19,10 @@ public class PosgreRepository(
         Funko funko,
         CancellationToken ct = default)
     {
-    
+        /// Creamos id de la entidad para mantener
+        /// conpatibilidad con mongo
+        funko.Id = ObjectId.GenerateNewId().ToString();
+
         _context.Funkos.Add(funko);
 
         await _context.SaveChangesAsync(ct);
@@ -34,25 +38,41 @@ public class PosgreRepository(
     // READ
     // =========================================================
 
-    /// <inheritdoc cref="IFunkoRepository.GetFunkoByIdAsync(int, CancellationToken)"/>
-    public Task<Funko?> GetFunkoByIdAsync(
-        int id,
+    /// <inheritdoc cref="IFunkoRepository.GetFunkoByIdAsync(string, CancellationToken)"/>
+    public async Task<Funko?> GetFunkoByIdAsync(
+        string id,
         CancellationToken ct = default)
     {
-        return _context.Funkos
+        Funko? funko = await _context.Funkos
             .AsNoTracking()
-            .Include(f => f.Supplier)
             .FirstOrDefaultAsync(f => f.Id == id, ct);
-    }
+        if(funko is null) return null;
+        await _context.Entry(funko) // Obtener el proveedor al que hace referencia
+            .Reference(f => f.Supplier)
+            .LoadAsync(ct);
+        return funko;
+    } // 
 
     /// <inheritdoc cref="IFunkoRepository.GetAllFunkosAsync(CancellationToken)"/>
-    public Task<List<Funko>> GetAllFunkosAsync(
-        CancellationToken ct = default)
+    public async Task<List<Funko>> GetAllFunkosAsync(CancellationToken ct = default)
     {
-        return _context.Funkos
+        // 1. Cargar colecciones founkos/Proveedores
+        List<Funko> funkos = await _context.Funkos
             .AsNoTracking()
-            .Include(f => f.Supplier)
             .ToListAsync(ct);
+        Dictionary<string, Supplier> suppliersDict = await _context.Suppliers
+            .AsNoTracking()
+            .ToDictionaryAsync(s => s.Id, ct); // a diccionario para mejores busquedas.
+        // 2. Asignar el proveedor a cada funko de forma directa
+        foreach (var funko in funkos)
+        {
+            if (suppliersDict.TryGetValue(funko.SupplierId, out var supplier))
+            {
+                funko.Supplier = supplier;
+            }
+        }
+
+        return funkos;
     }
 
     /// <inheritdoc cref="IFunkoRepository.GetPaginatedFunkosAsync(int, int, CancellationToken)"/>
@@ -67,25 +87,33 @@ public class PosgreRepository(
         int pageSize,
         CancellationToken ct = default)
     {
-        var query = _context.Funkos.AsNoTracking();
-
-        int count = await query.CountAsync(ct);
-
-        int totalPages = (int)Math.Ceiling(
-            (double)count / pageSize);
-
-        var items = await query
-            .Include(f => f.Supplier)
+        // 1. Cargar colecciones founkos/Proveedores
+        List<Funko> funkos= await _context.Funkos
+            .AsNoTracking()
             .OrderBy(f => f.Id)
             .Skip((pageNumber - 1) * pageSize)
             .Take(pageSize)
             .ToListAsync(ct);
-
+        Dictionary<string, Supplier> suppliersDict = await _context.Suppliers
+            .AsNoTracking()
+            .ToDictionaryAsync(s => s.Id, ct); // a diccionario para mejores busquedas.
+        // 2. Asignar el proveedor a cada funko de forma directa
+        foreach (var funko in funkos)
+        {
+            if (suppliersDict.TryGetValue(funko.SupplierId, out var supplier))
+            {
+                funko.Supplier = supplier;
+            }
+        }
+        // 3. Calcular metadatos
+        int count = funkos.Count;
+        int totalPages = (int)Math.Ceiling(
+            (double)count / pageSize);
         bool hasPreviousPage = pageNumber > 1;
         bool hasNextPage = pageNumber < totalPages;
 
         return (
-            items,
+            funkos,
             count,
             totalPages,
             hasPreviousPage,
@@ -97,9 +125,9 @@ public class PosgreRepository(
     // UPDATE
     // =========================================================
 
-    /// <inheritdoc cref="IFunkoRepository.UpdateFunkoAsync(int, FunkoUpdateRequestDto, CancellationToken)"/>
+    /// <inheritdoc cref="IFunkoRepository.UpdateFunkoAsync(string, FunkoUpdateRequestDto, CancellationToken)"/>
     public async Task<Funko?> UpdateFunkoAsync(
-        int id,
+        string id,
         FunkoUpdateRequestDto funko,
         CancellationToken ct = default)
     {
@@ -121,9 +149,9 @@ public class PosgreRepository(
 
         return response;
     }
-    /// <inheritdoc cref="IFunkoRepository.UpdateCategoryFromFunkoAsync(int, CategoryUpdateRequestDto, CancellationToken)"/>
+    /// <inheritdoc cref="IFunkoRepository.UpdateCategoryFromFunkoAsync(string, CategoryUpdateRequestDto, CancellationToken)"/>
     public async Task<Funko?> UpdateCategoryFromFunkoAsync(
-        int id,
+        string id,
         CategoryUpdateRequestDto request,
         CancellationToken ct = default
     )
@@ -143,10 +171,10 @@ public class PosgreRepository(
 
         return response;
     }
-    /// <inheritdoc cref="IFunkoRepository.UpdateSuplierFromFunkoAsync(int, int, CancellationToken)"/>
+    /// <inheritdoc cref="IFunkoRepository.UpdateSuplierFromFunkoAsync(string, string, CancellationToken)"/>
     public async Task<Funko?> UpdateSuplierFromFunkoAsync(
-        int id,
-        int SupplierId,
+        string id,
+        string SupplierId,
         CancellationToken ct = default
     )
     {
@@ -169,9 +197,9 @@ public class PosgreRepository(
     // DELETE / RESTORE
     // =========================================================
 
-    /// <inheritdoc cref="IFunkoRepository.DeleteFunkoAsync(int, CancellationToken)"/>
+    /// <inheritdoc cref="IFunkoRepository.DeleteFunkoAsync(string, CancellationToken)"/>
     public async Task<bool> DeleteFunkoAsync(
-        int id,
+        string id,
         CancellationToken ct = default)
     {
         var response = await _context.Funkos
@@ -190,9 +218,9 @@ public class PosgreRepository(
         return true;
     }
 
-    /// <inheritdoc cref="IFunkoRepository.RestoreFunkoAsync(int, CancellationToken)"/>
+    /// <inheritdoc cref="IFunkoRepository.RestoreFunkoAsync(string, CancellationToken)"/>
     public async Task<Funko?> RestoreFunkoAsync(
-        int id,
+        string id,
         CancellationToken ct = default)
     {
         var response = await _context.Funkos
@@ -231,7 +259,7 @@ public class PosgreRepository(
     }
     /// <inheritdoc cref="IFunkoRepository.ExistSupplierByIdAsync(int, CancellationToken)"/>
     public async Task<bool> ExistSupplierByIdAsync(
-        int id,
+        string id,
         CancellationToken ct = default)
     {
         return await _context.Suppliers

@@ -8,8 +8,7 @@ public class FunkoController(
 {
     // =========================================================
     // CREATE
-    // =========================================================
-
+    // =========================== 
     [HttpPost]
     public async Task<ActionResult<FunkoDto>> CreateFunko(
         [FromBody] FunkoCreateRequestDto dto)
@@ -31,7 +30,7 @@ public class FunkoController(
     /// </summary>
     [HttpGet("{id}")]
     public async Task<ActionResult> GetFunkoById(
-        int id,
+        string id,
         CancellationToken ct)
     {
         var funko = await _service.GetFunkoByIdAsync(id, ct);
@@ -85,7 +84,7 @@ public class FunkoController(
     /// </summary>
     [HttpPut("{id}")]
     public async Task<ActionResult<FunkoDto>> UpdateFunko(
-        int id,
+        string id,
         [FromBody] FunkoUpdateRequestDto dto,
         CancellationToken ct)
     {
@@ -101,7 +100,7 @@ public class FunkoController(
     /// </summary>
     [HttpPatch("{id}/category")]
     public async Task<ActionResult<FunkoDto>> UpdateCategoryFromFunko(
-        int id,
+        string id,
         [FromBody] CategoryUpdateRequestDto dto,
         CancellationToken ct)
     {
@@ -117,8 +116,8 @@ public class FunkoController(
     /// </summary>
     [HttpPatch("{id}/supplier/{supplierId}")]
     public async Task<ActionResult<FunkoDto>> UpdateSupplierFromFunko(
-        int id,
-        int supplierId,
+        string id,
+        string supplierId,
         CancellationToken ct)
     {
         var response = await _service.UpdateSupplierFromFunko(
@@ -138,7 +137,7 @@ public class FunkoController(
     /// </summary>
     [HttpDelete("{id}")]
     public async Task<ActionResult> DeleteFunko(
-        int id,
+        string id,
         CancellationToken ct)
     {
         var response = await _service.DeleteFunkoAsync(id, ct);
@@ -153,7 +152,7 @@ public class FunkoController(
     /// </summary>
     [HttpPatch("{id}/restore")]
     public async Task<ActionResult<FunkoDto>> RestoreFunko(
-        int id,
+        string id,
         CancellationToken ct)
     {
         var response = await _service.RestoreDeletedFunkoAsync(id, ct);

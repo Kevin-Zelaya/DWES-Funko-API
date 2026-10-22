@@ -57,9 +57,9 @@ public class SupplierPostgreRepository(
         );
     }
 
-    /// <inheritdoc cref="ISupplierRepository.GetSupplierByIdAsync(int, CancellationToken)"/>
+    /// <inheritdoc cref="ISupplierRepository.GetSupplierByIdAsync(string, CancellationToken)"/>
     public async Task<Supplier?> GetSupplierByIdAsync(
-        int id,
+        string id,
         CancellationToken ct = default
     )
     {
